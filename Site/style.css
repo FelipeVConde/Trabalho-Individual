@@ -1,0 +1,6 @@
+body{
+    background-image: url(assets/imgs/Background/genshin-impact-loading.gif);
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+}
