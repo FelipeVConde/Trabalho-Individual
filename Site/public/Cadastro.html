@@ -6,15 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Genshin - Cadastro</title>
-
+    
+    <script src="./JS/Cadastro.js"></script>
+    
     <link rel="icon" href="assets/imgs/Logo/Logo.jpg">
     <link rel="stylesheet" href="CSS/cadastro.css">
-    <script src="./JS/Cadastro.js"></script>
+    
 
 </head>
 
 <body>
 
+    <video autoplay muted loop>
+        <source src="assets/videos/Background/FundoLogar.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+    </video>
     <div class="form-box">
         <div class="form-value">
 
@@ -56,7 +62,7 @@
                         href="index.html">Voltar a
                         Home</a></label>
             </div>
-            <button onclick="cadastrar()">Cadastrar</button>
+            <button id="btCadastro" onclick="cadastrar()">Cadastrar</button>
             <div class="register">
                 <p>Já possui uma conta ? &nbsp;<a href="Login.html">Entrar</a></p>
             </div>

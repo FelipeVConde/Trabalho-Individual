@@ -6,6 +6,7 @@
     <title>Login - Genshin</title>
 
     <link rel="icon" href="assets/imgs/Logo/Logo.jpg">
+    <link rel="stylesheet" href="CSS/cadastro.css">
 </head>
 <body>
 
@@ -29,7 +30,9 @@
                     </div>
                     <button class="botao" onclick="entrar()">
                         Entrar
-                    </button>
+                    </button><a
+                    href="index.html">Voltar a
+                    Home</a>
                 </div>
 
                 <div id="div_aguardar" class="loading-div">
@@ -87,7 +90,7 @@ function entrar() {
                 sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                 setTimeout(function () {
-                    window.location = "./dashboard/cards.html";
+                    window.location = "./index.html";
                 }, 1000); // apenas para exibir o loading
 
             });
