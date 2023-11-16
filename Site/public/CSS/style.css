@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
 }
 
 .header {
@@ -25,16 +26,17 @@ body {
 }
 
 .agora {
-    font-weight: 800;
+    font-weight: 1000;
   }
 
 .navbar {
     width: 300px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     list-style: none;
     color: #647ef8;
+    font-size: larger;
   }
 
 .banner {
