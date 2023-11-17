@@ -8,3 +8,4 @@ CREATE TABLE usuario(
     email VARCHAR(45),
     senha VARCHAR(45)
 );
+

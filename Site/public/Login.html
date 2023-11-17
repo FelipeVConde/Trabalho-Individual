@@ -71,13 +71,7 @@ function entrar() {
         senhaVar == ""
     ){
         erro_email.innerHTML = 
-            "Algum em branco!!";
-    }else if(emailVar.trim() == "" || emailVar.indexOf("@") == -1 || emailVar.indexOf(".") == -1){
-        erro_email.innerHTML =
-            "Email invalido"
-    }else if(senhaVar.length < 8){
-        erro_senha.innerHTML =
-            "senha deve conter 8 ou mais caracteres"
+            "";
     }else {
         setInterval(sumirMensagem, 5000)
     }
@@ -106,11 +100,10 @@ function entrar() {
                 sessionStorage.EMAIL_USUARIO = json.email;
                 sessionStorage.NOME_USUARIO = json.nome;
                 sessionStorage.ID_USUARIO = json.id;
-                sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                 setTimeout(function () {
-                    window.location.href = "./index.html";
-                }, 1000); // apenas para exibir o loading
+                    window.location = "index.html";
+                }, 2000); // apenas para exibir o loading
 
             });
 
@@ -120,7 +113,6 @@ function entrar() {
 
             resposta.text().then(texto => {
                 console.error(texto);
-                finalizarAguardar(texto);
             });
         }
 
