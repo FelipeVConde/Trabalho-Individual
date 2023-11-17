@@ -66,13 +66,19 @@ function entrar() {
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
 
-    if (emailVar == "" || senhaVar == "") {
-        cardErro.style.display = "block"
-        mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-        
-        return false;
-    }
-    else {
+    if(
+        emailVar == "" ||
+        senhaVar == ""
+    ){
+        erro_email.innerHTML = 
+            "Algum em branco!!";
+    }else if(emailVar.trim() == "" || emailVar.indexOf("@") == -1 || emailVar.indexOf(".") == -1){
+        erro_email.innerHTML =
+            "Email invalido"
+    }else if(senhaVar.length < 8){
+        erro_senha.innerHTML =
+            "senha deve conter 8 ou mais caracteres"
+    }else {
         setInterval(sumirMensagem, 5000)
     }
 
