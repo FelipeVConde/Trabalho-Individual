@@ -30,6 +30,7 @@
                     <label for="email_input">Email</label>
                 </span>
                 <input type="email" id="email_input">
+                <span class="mensagem_erro" id="erro_email"></span>
 
             </div>
             <div class="inputbox">
@@ -38,6 +39,7 @@
                     <label for="senha_input">Senha</label>
                 </span>
                 <input type="password" id="senha_input">
+                <span class="mensagem_erro" id="erro_senha"></span>
 
             </div>
                     <button id="btCadastro" onclick="entrar()">
@@ -60,7 +62,6 @@
 </html>
 <script>
 function entrar() {
-    aguardar();
 
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
@@ -68,7 +69,7 @@ function entrar() {
     if (emailVar == "" || senhaVar == "") {
         cardErro.style.display = "block"
         mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-        finalizarAguardar();
+        
         return false;
     }
     else {
@@ -102,7 +103,7 @@ function entrar() {
                 sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                 setTimeout(function () {
-                    window.location = "./index.html";
+                    window.location.href = "./index.html";
                 }, 1000); // apenas para exibir o loading
 
             });
