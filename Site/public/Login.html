@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Genshin</title>
 
+
     <link rel="icon" href="assets/imgs/Logo/Logo.jpg">
     <link rel="stylesheet" href="CSS/cadastro_login.css">
 </head>
+
 <body>
 
     <video autoplay muted loop>
@@ -42,89 +45,94 @@
                 <span class="mensagem_erro" id="erro_senha"></span>
 
             </div>
-                    <button id="btCadastro" onclick="entrar()">
-                        Entrar
-                    </button><a
-                    href="index.html">Voltar a
-                    Home</a>
-                </div>
-
-                <div id="div_aguardar" class="loading-div">
-                    
-                </div>
-
-                <div id="div_erros_login"></div>
-            </div>
+            <button id="btCadastro" onclick="entrar()">
+                Entrar
+            </button>
+            <a href="index.html">
+                Voltar a
+                Home
+            </a>
         </div>
+
+        <div id="div_aguardar" class="loading-div">
+
+        </div>
+
+        <div id="div_erros_login"></div>
     </div>
-    
+    </div>
+    </div>
+
 </body>
+
 </html>
 <script>
-function entrar() {
+    function entrar() {
 
-    var emailVar = email_input.value;
-    var senhaVar = senha_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
 
-    if(
-        emailVar == "" ||
-        senhaVar == ""
-    ){
-        erro_email.innerHTML = 
-            "";
-    }else {
-        setInterval(sumirMensagem, 5000)
-    }
-
-    console.log("FORM LOGIN: ", emailVar);
-    console.log("FORM SENHA: ", senhaVar);
-
-    fetch("/usuarios/autenticar", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            emailServer: emailVar,
-            senhaServer: senhaVar
-        })
-    }).then(function (resposta) {
-        console.log("ESTOU NO THEN DO entrar()!")
-
-        if (resposta.ok) {
-            console.log(resposta);
-
-            resposta.json().then(json => {
-                console.log(json);
-                console.log(JSON.stringify(json));
-                sessionStorage.EMAIL_USUARIO = json.email;
-                sessionStorage.NOME_USUARIO = json.nome;
-                sessionStorage.ID_USUARIO = json.id;
-
-                setTimeout(function () {
-                    window.location = "index.html";
-                }, 2000); // apenas para exibir o loading
-
-            });
-
+        if (
+            emailVar == "" ||
+            senhaVar == ""
+        ) {
+            erro_email.innerHTML =
+                "";
         } else {
-
-            console.log("Houve um erro ao tentar realizar o login!");
-
-            resposta.text().then(texto => {
-                console.error(texto);
-            });
+            setInterval(sumirMensagem, 5000)
         }
 
-    }).catch(function (erro) {
-        console.log(erro);
-    })
+            console.log("FORM LOGIN: ", emailVar);
+            console.log("FORM SENHA: ", senhaVar);
 
-    return false;
-}
+            fetch("/usuarios/autenticar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+                })
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!")
 
-function sumirMensagem() {
-    cardErro.style.display = "none"
-}
+                if (resposta.ok) {
+                    console.log(resposta);
+                    
+                        resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.ID_USUARIO = json.id;
+
+                        setTimeout(function () {
+                        window.location = "index.html";
+                    }, 1000); // apenas para exibir o loading
+
+                    });
+
+
+                } else {
+
+                    console.log("Houve um erro ao tentar realizar o login!");
+
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                    });
+                }
+
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+
+            return false;
+        
+    }
+
+    function sumirMensagem() {
+        // cardErro.style.display = "none"
+    }
 
 </script>
