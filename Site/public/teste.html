@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+    /* Estilo para o seletor personalizado */
+    .custom-select {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Estilo para a imagem da opção selecionada */
+    .custom-select img {
+      border-radius: 50%;
+    }
+
+    /* Estilo para a lista de opções personalizada */
+    .custom-options {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      display: none;
+      border: 2px solid #ccc;
+      border-top: none;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: #fff;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Estilo para cada opção na lista personalizada */
+    .custom-options img {
+      width: 100px; 
+      height: 100px; 
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="custom-select" id="customSelect">
+    <img src="assets/imgs/iconCaracter/Albedo.webp" style="height: 100px; width: 100px;" alt="Opção 1">
+    <ul class="custom-options">
+      <li onclick="selectOption('assets/imgs/iconCaracter/Albedo.webp')"> <img src="assets/imgs/iconCaracter/Albedo.webp" alt="Albedo"> </li>
+      <li onclick="selectOption('assets/imgs/iconCaracter/Alhaitham.webp')"> <img src="assets/imgs/iconCaracter/Alhaitham.webp" alt="Alhaitham"> </li>
+      <li onclick="selectOption('assets/imgs/iconCaracter/Aloy.webp')"> <img src="assets/imgs/iconCaracter/Aloy.webp" alt="Aloy"> </li>
+      <!-- Adicione mais opções conforme necessário -->
+    </ul><br>
+    <button onclick="AbrirFecharLista()">
+        Lista de personagem
+    </button>
+  </div>
+
+  <script>
+    // Função para selecionar uma opção
+    function selectOption(imageSrc) {
+      document.getElementById('customSelect').querySelector('img').src = imageSrc;
+      closeOptions();
+    }
+
+    // Função para abrir ou fechar a lista de opções
+    function AbrirFecharLista() {
+      var options = document.getElementById('customSelect').querySelector('.custom-options');
+      options.style.display = options.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // // Função para fechar a lista de opções
+    // function closeOptions() {
+    //   document.getElementById('customSelect').querySelector('.custom-options').style.display = 'none';
+    // }
+
+    // // Adicionar evento de clique fora do seletor para fechar as opções
+    // document.addEventListener('click', function(event) {
+    //   var customSelect = document.getElementById('customSelect');
+    //   if (!customSelect.contains(event.target)) {
+    //     closeOptions();
+    //   }
+    // });
+  </script>
+
+</body>
+</html>

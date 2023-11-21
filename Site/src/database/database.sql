@@ -213,8 +213,14 @@ SELECT * FROM especialidade;
 
 SELECT * FROM personagem;
 
--- Trazer lista de dados do personagem e seu tipo de arma
+-- Trazer lista de dados do personagem e seu tipo de arma.
 SELECT personagem.nome, personagem.visão, personagem.nação, personagem.raridade, arma.tipo as 'tipo de arma' FROM arma
 	JOIN personagem ON fkArma = idArma;
+
+-- Trazer lista de dados do usuario que tem certo de personagem.
+SELECT usuario.* FROM usuario
+    JOIN personagem
+        ON idPersonagem = fkPersonagem
+WHERE personagem.nome =''
 
 TRUNCATE usuario;
