@@ -19,14 +19,27 @@ body {
     padding: 50px;
 }
 
-.div_contexto img {
+.div_contexto .img_arma {
     height: 350px;
     width: 622px;
+}
+
+.div_contexto .img_splash {
+    height: 450px;
+    width: 615px;
+    padding-left: 4%;
+    /* border-radius: 20%; */
+    /* border: solid #1f1f1f; */
 }
 
 .div_card {
     border: solid;
     border-color: black;
+}
+
+.div_card img {
+    height: 1200px;
+    width: 375px;
 }
 
 .container2 {
@@ -50,15 +63,50 @@ body {
     width: 622px;
 }
 
+.container3 {
+    margin: 10px;
+}
+
 .container3 .div_skill3 {
     display: flex;
 }
 
 .container3 .div_skill3 p {
-    padding: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .container3 .div_skill3 video {
+    height: 350px;
+    width: 622px;
+}
+
+.container3 .div_skill1 {
+    display: flex;
+    padding-top: 5%;
+}
+
+.container3 .div_skill1 p {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.container3 .div_skill1 video {
+    height: 350px;
+    width: 622px;
+}
+
+.container3 .div_skill2 {
+    display: flex;
+    padding-top: 5%;
+}
+
+.container3 .div_skill2 p {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.container3 .div_skill2 video {
     height: 350px;
     width: 622px;
 }
