@@ -221,6 +221,6 @@ SELECT personagem.nome, personagem.visão, personagem.nação, personagem.rarida
 SELECT usuario.* FROM usuario
     JOIN personagem
         ON idPersonagem = fkPersonagem
-WHERE personagem.nome =''
+WHERE personagem.nome ='';
 
 TRUNCATE usuario;

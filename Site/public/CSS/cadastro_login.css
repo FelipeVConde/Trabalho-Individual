@@ -17,6 +17,15 @@ video {
     z-index: -1; /* Para colocar o vídeo atrás de outros elementos */
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.container_input {
+    margin: 10px;
+}
+
 .form-box {
     display: flex;
     justify-content: center;
@@ -29,7 +38,7 @@ video {
     border-radius: 10px;
     padding: 15px;
     font-size: 12pt;
-    box-shadow: 0px 10px 40px #00000056;
+    box-shadow: 5px 5px 10px 5px #00000056;
     outline: none;
     box-sizing: border-box;
 }

@@ -30,48 +30,150 @@
         <div class="form-value">
 
             <h2>CADASTRE-SE</h2>
+            <div class="container">
+                <div class="container_input">
+
+                    <div class="inputbox">
+
+                        <span>
+                            <label for="nome_input">Nome</label>
+                        </span><br>
+                        <input type="text" id="nome_input">
+                        <span class="mensagem_erro" id="erro_nome"></span>
+
+                    </div><br>
+                    <div class="inputbox">
+
+                        <span>
+                            <label for="email_input">Email</label>
+                        </span><br>
+                        <input type="email" id="email_input">
+                        <span class="mensagem_erro" id="erro_email"></span>
+
+                    </div>
+
+                </div>
+
+                <div class="container_input">
+
+                    <div class="inputbox">
+
+                        <span>
+                            <label for="senha_input">Senha</label>
+                        </span><br>
+                        <input type="password" id="senha_input">
+                        <span class="mensagem_erro" id="erro_senha"></span>
+
+                    </div><br>
+                    <div class="inputbox">
+
+                        <span>
+                            <label for="confirmacao_senha_input"> Confirmar Senha</label>
+                        </span><br>
+                        <input type="password" id="confirmacao_senha_input">
+                        <span class="mensagem_erro" id="erro_confirmacao"></span>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
             <div class="inputbox">
 
                 <span>
-                    <label for="nome_input">Nome</label>
+                    <label for="select_personagem">Selecionar Personagem</label>
                 </span><br>
-                <input type="text" id="nome_input">
-                <span class="mensagem_erro" id="erro_nome"></span>
-
+                <select id="select_personagem">
+                    <option disabled selected>Personagem</option>
+                    <option value="albedo">Albedo</option>
+                    <option value="alhaitham">Alhaitham</option>
+                    <option value="aloy">Aloy</option>
+                    <option value="amber">Amber</option>
+                    <option value="andarilho">Andarilho</option>
+                    <option value="ayaka">Ayaka</option>
+                    <option value="ayato">Ayato</option>
+                    <option value="baizhu">Baizhu</option>
+                    <option value="barbara">Barbara</option>
+                    <option value="beidou">Beidou</option>
+                    <option value="bennett">bennett</option>
+                    <option value="candace">Candace</option>
+                    <option value="charlotte">Charlotte</option>
+                    <option value="chevreuse">Chevreuse</option>
+                    <option value="chongyun">Chongyun</option>
+                    <option value="collei">Collei</option>
+                    <option value="cyno">Cyno</option>
+                    <option value="dehya">Dehya</option>
+                    <option value="diluc">Diluc</option>
+                    <option value="diona">Diona</option>
+                    <option value="dori">Dori</option>
+                    <option value="eula">Eula</option>
+                    <option value="faruzan">Faruzan</option>
+                    <option value="fischl">Fischl</option>
+                    <option value="freminet">Freminet</option>
+                    <option value="furina">Furina</option>
+                    <option value="ganyu">Ganyu</option>
+                    <option value="gorou">Gorou</option>
+                    <option value="heizou">Heizou</option>
+                    <option value="hu tao">Hu Tao</option>
+                    <option value="itto">Itto</option>
+                    <option value="jean">Jean</option>
+                    <option value="kaeya">Kaeya</option>
+                    <option value="kaveh">Kaveh</option>
+                    <option value="kazuha">Kazuha</option>
+                    <option value="keqing">Keqing</option>
+                    <option value="kirara">Kirara</option>
+                    <option value="klee">Klee</option>
+                    <option value="kokomi">Kokomi</option>
+                    <option value="kuki">Kuki</option>
+                    <option value="layla">Layla</option>
+                    <option value="lisa">Lisa</option>
+                    <option value="lumine">Lumine</option>
+                    <option value="lynette">Lynette</option>
+                    <option value="lyney">Lyney</option>
+                    <option value="mika">Mika</option>
+                    <option value="mona">Mona</option>
+                    <option value="nahida">Nahida</option>
+                    <option value="navia">Navia</option>
+                    <option value="neuvillette">Neuvillette</option>
+                    <option value="nilou">Nilou</option>
+                    <option value="ningguang">Ningguang</option>
+                    <option value="noelle">Noelle</option>
+                    <option value="qiqi">Qiqi</option>
+                    <option value="raiden">Raiden</option>
+                    <option value="razor">Razor</option>
+                    <option value="rosaria">Rosaria</option>
+                    <option value="sara">Sara</option>
+                    <option value="sayu">Sayu</option>
+                    <option value="shenhe">Shenhe</option>
+                    <option value="sucrose">Sucrose</option>
+                    <option value="tartaglia">Tartaglia</option>
+                    <option value="thoma">Thoma</option>
+                    <option value="tighnari">Tighnari</option>
+                    <option value="traveler">Traveler</option>
+                    <option value="venti">Venti</option>
+                    <option value="wriothesley">Wriothesley</option>
+                    <option value="xiangling">Xiangling</option>
+                    <option value="xiao">Xiao</option>
+                    <option value="xingqiu">Xingqiu</option>
+                    <option value="xinyan">Xinyan</option>
+                    <option value="yae">Yae</option>
+                    <option value="yanfei">Yanfei</option>
+                    <option value="yaoyao">Yaoyao</option>
+                    <option value="yelan">Yelan</option>
+                    <option value="yoimiya">Yoimiya</option>
+                    <option value="yun jin">Yun jin</option>
+                    <option value="zhongli">Zhongli</option>
+                </select>
             </div>
-            <div class="inputbox">
-
-                <span>
-                    <label for="email_input">Email</label>
-                </span><br>
-                <input type="email" id="email_input">
-                <span class="mensagem_erro" id="erro_email"></span>
-
-            </div>
-            <div class="inputbox">
-
-                <span>
-                    <label for="senha_input">Senha</label>
-                </span><br>
-                <input type="password" id="senha_input">
-                <span class="mensagem_erro" id="erro_senha"></span>
-
-            </div>
-            <div class="inputbox">
-
-                <span>
-                    <label for="confirmacao_senha_input"> Confirmar Senha</label>
-                </span><br>
-                <input type="password" id="confirmacao_senha_input">
-                <span class="mensagem_erro" id="erro_confirmacao"></span>
-
-            </div>
-            <div class="forget">
+            
+            <button id="btCadastro" onclick="cadastrar()">Cadastrar</button>
+            <div>
                 <a href="index.html">
                     Voltar a Home
                 </a>
             </div>
-            <button id="btCadastro" onclick="cadastrar()">Cadastrar</button>
             <div class="register">
                 <p>Já possui uma conta ? <a href="Login.html">Entrar</a></p>
             </div>
@@ -89,12 +191,102 @@
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var personagemVar = select_personagem.value;
+        var fkPersonagemVar = 0
+
+        ListaPersonagem = [
+            'albedo',
+            'alhaitham',
+            'aloy',
+            'amber',
+            'andarilho',
+            'ayaka',
+            'ayato',
+            'baizhu',
+            'barbara',
+            'beidou',
+            'bennett',
+            'candace',
+            'charlotte',
+            'chevreuse',
+            'chongyun',
+            'collei',
+            'cyno',
+            'dehya',
+            'diluc',
+            'diona',
+            'dori',
+            'eula',
+            'faruzan',
+            'fischl',
+            'freminet',
+            'furina',
+            'ganyu',
+            'gorou',
+            'heizou',
+            'hu tao',
+            'itto',
+            'jean',
+            'kaeya',
+            'kaveh',
+            'kazuha',
+            'keqing',
+            'kirara',
+            'klee',
+            'kokomi',
+            'kuki',
+            'layla',
+            'lisa',
+            'lumine',
+            'lynnette',
+            'lyney',
+            'mika',
+            'mona',
+            'nahida',
+            'navia',
+            'neuvillette',
+            'nilou',
+            'ningguang',
+            'noelle',
+            'qiqi',
+            'raiden',
+            'razor',
+            'rosaria',
+            'sara',
+            'sayu',
+            'shenhe',
+            'sucrose',
+            'tartaglia',
+            'thoma',
+            'tighnari',
+            'traveler',
+            'venti',
+            'wriothesley',
+            'xiangling',
+            'xiao',
+            'xingqiu',
+            'xinyan',
+            'yae',
+            'yanfei',
+            'yaoyao',
+            'yelan',
+            'yoimiya',
+            'yun jin',
+            'zhongli'
+        ]
+
+        for (posicao = 0; posicao <= ListaPersonagem.length; posicao += 1) {
+            if (personagemVar == ListaPersonagem[posicao]) {
+                fkPersonagemVar = posicao + 1
+            }
+        }
 
         if (
             nomeVar == "" ||
             emailVar == "" ||
             senhaVar == "" ||
-            confirmacaoSenhaVar == ""
+            confirmacaoSenhaVar == "" ||
+            personagemVar == ""
         ) {
             erro_nome.innerHTML =
                 "Algum em branco!!";
@@ -125,7 +317,8 @@
                     // Agora vá para o arquivo routes/usuario.js
                     nomeServer: nomeVar,
                     emailServer: emailVar,
-                    senhaServer: senhaVar
+                    senhaServer: senhaVar,
+                    fkPersonagemServer: fkPersonagemVar
                 }),
             })
                 .then(function (resposta) {
