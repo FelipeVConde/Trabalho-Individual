@@ -1,3 +1,51 @@
 body {
     background-color: #4c4c4c;
+    color: white;
+}
+
+.container1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.div_icon img{
+    border-radius: 50%;
+    border: solid;
+    border-color: #1f1f1f;
+}
+
+.div_contexto {
+    padding: 50px;
+}
+
+.div_contexto img {
+    height: 350px;
+    width: 622px;
+}
+
+.div_card {
+    border: solid;
+    border-color: black;
+}
+
+.container2 {
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 5%;
+}
+
+.container2 .div_idle1 video{
+    height: 350px;
+    width: 622px;
+}
+
+.container2 .div_spin video {
+    height: 350px;
+    width: 622px;
+}
+
+.container2 .div_idle2 video {
+    height: 350px;
+    width: 622px;
 }

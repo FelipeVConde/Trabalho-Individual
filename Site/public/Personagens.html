@@ -1,139 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genshin | Personagens</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genshin | Personagens</title>
 
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/personagens.css">
-    <link rel="icon" href="assets/imgs/Logo/Logo.jpg">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/personagens.css">
+  <link rel="icon" href="assets/imgs/Logo/Logo.jpg">
 
-    <script src="JS/personagens.js"></script>
+  <script src="JS/personagens.js"></script>
 </head>
+
 <body>
 
-    <div class="header">
-        <div class="container">
-          <img src="assets/imgs/Logo/Genshin_Impact_logo.svg.png" alt="genshin logo" height="70px">
-          <div>
-            <ul class="navbar">
-            <li>
-              <a href="index.html">Início</a>
-            </li>
-            <li class="agora">
-              <a href="#">Personagens</a>
-            </li>
-            <li>
-              <a href="RandomizadorCaracter.html">Quiz</a>
-            </li>
-            </ul>
-          </div>
-            <ul class="navbar">
-            <li>
-              <a href="Login.html">Login</a>
-            </li>
-            <li>
-              <a href="Cadastro.html">Cadastro</a>
-            </li>
-          </ul>
-        </div>
-    </div>
-
-    <div class="div_corpo">
+  <div class="header">
+    <div class="container">
+      <img src="assets/imgs/Logo/Genshin_Impact_logo.svg.png" alt="genshin logo" height="70px">
       <div>
-
-        <select id="select_personagem">
-          <option disabled selected>Personagem</option>
-          <option value="albedo">Albedo</option>
-          <option value="alhaitham">Alhaitham</option>
-          <option value="aloy">Aloy</option>
-          <option value="amber">Amber</option>
-          <option value="andarilho">Andarilho</option>
-          <option value="ayaka">Ayaka</option>
-          <option value="ayato">Ayato</option>
-          <option value="baizhu">Baizhu</option>
-          <option value="barbara">Barbara</option>
-          <option value="beidou">Beidou</option>
-          <option value="bennett">bennett</option>
-          <option value="candace">Candace</option>
-          <option value="charlotte">Charlotte</option>
-          <option value="chevreuse">Chevreuse</option>
-          <option value="chongyun">Chongyun</option>
-          <option value="collei">Collei</option>
-          <option value="cyno">Cyno</option>
-          <option value="dehya">Dehya</option>
-          <option value="diluc">Diluc</option>
-          <option value="diona">Diona</option>
-          <option value="dori">Dori</option>
-          <option value="eula">Eula</option>
-          <option value="faruzan">Faruzan</option>
-          <option value="fischl">Fischl</option>
-          <option value="freminet">Freminet</option>
-          <option value="furina">Furina</option>
-          <option value="ganyu">Ganyu</option>
-          <option value="gorou">Gorou</option>
-          <option value="heizou">Heizou</option>
-          <option value="hu tao">Hu Tao</option>
-          <option value="itto">Itto</option>
-          <option value="jean">Jean</option>
-          <option value="kaeya">Kaeya</option>
-          <option value="kaveh">Kaveh</option>
-          <option value="kazuha">Kazuha</option>
-          <option value="keqing">Keqing</option>
-          <option value="kirara">Kirara</option>
-          <option value="klee">Klee</option>
-          <option value="kokomi">Kokomi</option>
-          <option value="kuki">Kuki</option>
-          <option value="layla">Layla</option>
-          <option value="lisa">Lisa</option>
-          <option value="lumine">Lumine</option>
-          <option value="lynette">Lynette</option>
-          <option value="lyney">Lyney</option>
-          <option value="mika">Mika</option>
-          <option value="mona">Mona</option>
-          <option value="nahida">Nahida</option>
-          <option value="navia">Navia</option>
-          <option value="neuvillette">Neuvillette</option>
-          <option value="nilou">Nilou</option>
-          <option value="ningguang">Ningguang</option>
-          <option value="noelle">Noelle</option>
-          <option value="qiqi">Qiqi</option>
-          <option value="raiden">Raiden</option>
-          <option value="razor">Razor</option>
-          <option value="rosaria">Rosaria</option>
-          <option value="sara">Sara</option>
-          <option value="sayu">Sayu</option>
-          <option value="shenhe">Shenhe</option>
-          <option value="sucrose">Sucrose</option>
-          <option value="tartaglia">Tartaglia</option>
-          <option value="thoma">Thoma</option>
-          <option value="tighnari">Tighnari</option>
-          <option value="traveler">Traveler</option>
-          <option value="venti">Venti</option>
-          <option value="wriothesley">Wriothesley</option>
-          <option value="xiangling">Xiangling</option>
-          <option value="xiao">Xiao</option>
-          <option value="xingqiu">Xingqiu</option>
-          <option value="xinyan">Xinyan</option>
-          <option value="yae">Yae</option>
-          <option value="yanfei">Yanfei</option>
-          <option value="yaoyao">Yaoyao</option>
-          <option value="yelan">Yelan</option>
-          <option value="yoimiya">Yoimiya</option>
-          <option value="yun jin">Yun jin</option>
-          <option value="zhongli">Zhongli</option>
-        </select>
-
-        <button onclick="Buscar()">
-          buscar
-        </button>
-        
+        <ul class="navbar">
+          <li>
+            <a href="index.html">Início</a>
+          </li>
+          <li class="agora">
+            <a href="#">Personagens</a>
+          </li>
+          <li>
+            <a href="RandomizadorCaracter.html">Quiz</a>
+          </li>
+        </ul>
       </div>
-      <div id="div_informações">
-        
-      </div>
+      <ul class="navbar">
+        <li>
+          <a href="Login.html">Login</a>
+        </li>
+        <li>
+          <a href="Cadastro.html">Cadastro</a>
+        </li>
+      </ul>
     </div>
-    
+  </div>
+
+  <div class="div_corpo">
+    <div>
+
+      <select id="select_personagem">
+        <option disabled selected>Personagem</option>
+        <option value="albedo">Albedo</option>
+        <option value="alhaitham">Alhaitham</option>
+        <option value="aloy">Aloy</option>
+        <option value="amber">Amber</option>
+        <option value="andarilho">Andarilho</option>
+        <option value="ayaka">Ayaka</option>
+        <option value="ayato">Ayato</option>
+        <option value="baizhu">Baizhu</option>
+        <option value="barbara">Barbara</option>
+        <option value="beidou">Beidou</option>
+        <option value="bennett">bennett</option>
+        <option value="candace">Candace</option>
+        <option value="charlotte">Charlotte</option>
+        <option value="chevreuse">Chevreuse</option>
+        <option value="chongyun">Chongyun</option>
+        <option value="collei">Collei</option>
+        <option value="cyno">Cyno</option>
+        <option value="dehya">Dehya</option>
+        <option value="diluc">Diluc</option>
+        <option value="diona">Diona</option>
+        <option value="dori">Dori</option>
+        <option value="eula">Eula</option>
+        <option value="faruzan">Faruzan</option>
+        <option value="fischl">Fischl</option>
+        <option value="freminet">Freminet</option>
+        <option value="furina">Furina</option>
+        <option value="ganyu">Ganyu</option>
+        <option value="gorou">Gorou</option>
+        <option value="heizou">Heizou</option>
+        <option value="hu tao">Hu Tao</option>
+        <option value="itto">Itto</option>
+        <option value="jean">Jean</option>
+        <option value="kaeya">Kaeya</option>
+        <option value="kaveh">Kaveh</option>
+        <option value="kazuha">Kazuha</option>
+        <option value="keqing">Keqing</option>
+        <option value="kirara">Kirara</option>
+        <option value="klee">Klee</option>
+        <option value="kokomi">Kokomi</option>
+        <option value="kuki">Kuki</option>
+        <option value="layla">Layla</option>
+        <option value="lisa">Lisa</option>
+        <option value="lumine">Lumine</option>
+        <option value="lynette">Lynette</option>
+        <option value="lyney">Lyney</option>
+        <option value="mika">Mika</option>
+        <option value="mona">Mona</option>
+        <option value="nahida">Nahida</option>
+        <option value="navia">Navia</option>
+        <option value="neuvillette">Neuvillette</option>
+        <option value="nilou">Nilou</option>
+        <option value="ningguang">Ningguang</option>
+        <option value="noelle">Noelle</option>
+        <option value="qiqi">Qiqi</option>
+        <option value="raiden">Raiden</option>
+        <option value="razor">Razor</option>
+        <option value="rosaria">Rosaria</option>
+        <option value="sara">Sara</option>
+        <option value="sayu">Sayu</option>
+        <option value="shenhe">Shenhe</option>
+        <option value="sucrose">Sucrose</option>
+        <option value="tartaglia">Tartaglia</option>
+        <option value="thoma">Thoma</option>
+        <option value="tighnari">Tighnari</option>
+        <option value="traveler">Traveler</option>
+        <option value="venti">Venti</option>
+        <option value="wriothesley">Wriothesley</option>
+        <option value="xiangling">Xiangling</option>
+        <option value="xiao">Xiao</option>
+        <option value="xingqiu">Xingqiu</option>
+        <option value="xinyan">Xinyan</option>
+        <option value="yae">Yae</option>
+        <option value="yanfei">Yanfei</option>
+        <option value="yaoyao">Yaoyao</option>
+        <option value="yelan">Yelan</option>
+        <option value="yoimiya">Yoimiya</option>
+        <option value="yun jin">Yun jin</option>
+        <option value="zhongli">Zhongli</option>
+      </select>
+
+      <button onclick="Buscar()">
+        buscar
+      </button>
+
+    </div>
+    <div id="div_informações">
+      <div class="container1">
+        <div class="div_icon">
+          <img src="assets/imgs/iconCaracter/Albedo.webp" alt="albedo">
+        </div>
+        <div class="div_contexto">
+          <h1>ALBEDO</h1>
+          <p>
+            O misterioso Albedo é o Chefe Alquimista e Capitão da Equipe de Investigação dos Cavaleiros de Favonius, com Sucrose como sua assistente. Ele tem um desejo infinito de aprender sobre o mundo de Teyvat, estudando cuidadosamente todos os objetos ao seu redor.
+          </p><br>
+          <img src="assets/imgs/Personagens/albedo/albedo_weapon.webp" alt="" >
+        </div>
+        <div class="div_card">
+          <img src="assets/imgs/Personagens/albedo/albedo_gacha_card.webp" alt="albedo_gacha_card">
+        </div>
+      </div>
+
+      <div class="container2">
+        <div class="div_idle1">
+          <video src="assets/imgs/Personagens/albedo/albedo_idle1.mp4"></video>
+        </div>
+        <div class="div_spin">
+          <video autoplay muted loop src="assets/imgs/Personagens/albedo/albedo_360.mp4"></video>
+        </div>
+        <div class="div_idle2">
+          <video src="assets/imgs/Personagens/albedo/albedo_idle2.mp4"></video>
+        </div>
+      </div>
+
+      <div class="container3">
+        <h1>Habilidades</h1>
+        <div class="div_skill3">
+          video
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </body>
+
 </html>
