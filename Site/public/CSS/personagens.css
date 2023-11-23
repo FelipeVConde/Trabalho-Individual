@@ -49,3 +49,16 @@ body {
     height: 350px;
     width: 622px;
 }
+
+.container3 .div_skill3 {
+    display: flex;
+}
+
+.container3 .div_skill3 p {
+    padding: 10%;
+}
+
+.container3 .div_skill3 video {
+    height: 350px;
+    width: 622px;
+}
