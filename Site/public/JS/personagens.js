@@ -348,9 +348,9 @@ ListaSkill1 =  [
 
   'Ataque Normal<br> Realiza até 4 disparos consecutivos com o arco.<br><br>Ataque Carregado<br> Realiza um Disparo com Mira mais preciso e com mais dano.<br> Enquanto mira, elemento Dendro irá acumular na ponta da flecha. Uma flecha completamente carregada irá causar Dano Dendro.<br><br>  Ataque Imersivo<br> Dispara uma chuva de flechas do ar antes de cair e impactar o chão, causando Dano em uma AdE no impacto.',
 
-  'Ataque Normal<br> Realiza até 4 golpes com a lança.<br><br>  Ataque Carregado<br>Consome uma certa quantidade de Stamina para se lançar para frente, infligindo Dano em seu trajeto.<br><br>Ataque Imersivo<br>Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.',
+  'Ataque Normal<br> Realiza até 4 golpes com a lança.<br><br>  Ataque Carregado<br>Consome uma certa quantidade de Stamina para se lançar para frente, infligindo Dano em seu trajeto.<br><br>Ataque Imersivo<br>Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.', //cyno
 
-  
+
 ]
 ListaSkill2 = [
   'A criação da Radiação Solar causa Dano Geo em uma AdE<br><br> Radiação Solar  Tem as seguintes propriedades: Quando inimigos dentro da área da Radiação Solar são atingidos, a Radiação Solar gerará Flores Transitórias que causam Dano Geo em uma AdE. Dano causado escala conforme a DEF de Albedo.<br> Flores Transitórias só podem ser gerada uma vez a cada 2s. Quando um personagem está localizado no local da Radiação Solar, a Radiação Solar irá acumular o poder Geo, erguendo-os em um pódio cristalizado. Apenas um pódio cristalizado pode existir por vez.<br> Somente é possível existir uma Radiação Solar por vez feita por Albedo, e é considerada como uma Construção Geo.<br><br> Manter pressionado para designar a localização da habilidade.',
