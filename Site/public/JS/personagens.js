@@ -84,7 +84,7 @@ ListaIcon = [
   "assets/imgs/iconCaracter/Aloy.webp",
   "assets/imgs/iconCaracter/Amber.webp",
   "assets/imgs/iconCaracter/Andarilho.webp",
-  "assets/imgs/iconCaracter/ayaka.webp",
+  "assets/imgs/iconCaracter/Ayaka.webp",
   "assets/imgs/iconCaracter/Ayato.webp",
   "assets/imgs/iconCaracter/Baizhu.webp",
   "assets/imgs/iconCaracter/Barbara.webp",
@@ -320,6 +320,20 @@ ListaSkill1 =  [
 
   'Ataque Normal<br> Realiza até 5 golpes rápidos.<br><br>Ataque Carregado<br> Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada.<br><br> Ataque Imersivo<br> Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.',
 
+  'Ataque Normal<br> Realiza até 4 disparos consecutivos com o arco.<br><br>Ataque Carregado<br>Realiza um ataque Disparo com Mira mais preciso e com mais dano.<br> Enquanto mira, gelo será acumulado na flecha. Uma flecha totalmente carregada causará Dano Cryo.<br><br>Ataque Imersivo<br>Dispara uma chuva de flechas no ar antes de cair e impactar o chão, causando Dano AdE no impacto.',
+
+  'Ataque Normal<br> Realiza até 5 tiros consecutivos com um arco.<br><br> Ataque Carregado<br> Dispara um Tiro com Mira mais preciso e com Dano aumentado.<br> Ao mirar, chamas irão se acumular na ponta da flecha. Uma flecha em chamas completamente carregada inflige Dano Pyro.<br><br> Ataque Imersivo<br> Dispara uma chuva de flechas em pleno ar antes de atingir o chão, infligindo Dano em uma AdE durante o impacto.',
+
+  'Ataque Normal<br> Realiza até 3 ataques lançando Lâminas de Vento, infligindo Dano Anemo.<br<br> Ataque Carregado<br>  Consome uma certa quantidade de Stamina criando um campo de alta pressão, infligindo Dano Anemo em uma AdE após um curto período de canalização.<br><br> Ataque Imersivo<br> Convocando os poderes do Anemo para si, mergulha em direção ao chão a partir do ar, causando dano a todos os inimigos em seu caminho. Inflige Dano Anemo em uma AdE quando atinge o chão.',
+
+  'Ataque Normal<br> Realiza até 5 golpes rápidos.<br><br>  Ataque Carregado<br> Consome certa quantidade de Stamina para liberar o vento contínuo da espada.<br><br> Ataque Imersivo<br> Mergulha do ar para atingir o chão abaixo, causando Dano aos inimigos ao longo do caminho e causando Dano em uma AdE no impacto.',
+
+  'Ataque Normal<br> Realiza até 5 golpes de espada.<br><br>  Ataque Carregado<br> Consome uma certa quantidade de Stamina para avançar para frente realizando Iaido.<br><br> Ataque Imersivo<br> Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE no impacto.',
+
+  'Ataque Normal<br> Realiza até 4 ataques que infligem Dano Dendro.<br><br> Ataque Carregado<br> Consome uma certa quantidade de Stamina para infligir Dano Dendro em uma AdE após um curto período de canalização.<br><br>  Ataque Imersivo<br> Reunindo o poder do Dendro, mergulha em direção ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige Dano Dendro em uma AdE durante o impacto com o chão.',
+
+  'Ataque Normal<br> Realiza até 4 ataques com esguichos de água que infligem Dano Hydro.<br><br>  Ataque Carregado<br>  Consome uma certa quantidade de Stamina para infligir Dano Hydro em uma AdE após um curto período de canalização.<br><br> Ataque Imersivo<br> Reunindo o poder do Hydro, Barbara mergulha em direção ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige Dano Hydro em uma AdE durante o impacto com o chão.',
+
 
 ]
 ListaSkill2 = [
@@ -327,11 +341,42 @@ ListaSkill2 = [
 
   'Faz uma investida rapidamente. Ao terminar essa investida rápida, causa Dano Dendro contra os oponentes ao seu redor e acumula "Espelho Cortante". Será lançada de maneira de diferente ao Manter Pressionado.<br><br> Manter Pressionado<br> Entra em um estado de mira para ajustar a direção em que vai avançar.<br><br> Espelho Cortante<br> Ao lançar, Alhaitham gerará 1 Espelho Cortante; se ainda não possuir nenhum Espelho Cortante, gerará um adicional. O Espelho Cortante possui os seguintes efeitos:<br>· Ao possuir Espelhos Cortantes, os Ataques Normais, Carregados e Imersivos de Alhaitham serão convertidos em Dano Dendro que não pode ser substituído por outros elementos;<br>· Quando o ataque descrito acima atinge um inimigo, o Espelho Cortante fará o ataque Cortina de Luz, causando Dano Dendro em AdE baseado na quantidade de Espelhos Cortantes;<br>· É possível possuir até 3 Espelhos Cortantes;<br>· Os Espelhos Cortantes desaparecerão com o passar do tempo, e todos serão eliminados quando Alhaitham sair do campo de batalha.',
 
+  'Aloy lança uma Bomba Congelante na direção desejada que explode no impacto, causando Dano Cryo. Depois de explodir, a Bomba Congelante se dividirá em muitas Bombinhas Congelantes que explodirão ao entrar em contato com os oponentes ou após um curto período de tempo, causando Dano Cryo.<br>Quando a Bomba Congelante ou suas bombinhas atingem os oponentes, elas diminuirão o ATQ dos oponentes e concederão 1 acúmulo de Bobina a Aloy.<br> Aloy pode ganhar 1 acúmulo de Bobinas a cada 0.1s.<br><br> Bobina<br> Cada acúmulo aumentará o Dano do Ataque Normal de Aloy.<br> Quando ela tiver 4 acúmulos, Aloy elimina todos os efeitos de Bobina e ganha Gelo Rápido, aumentando o Dano causado pelo Ataque Normal e convertendo seus Ataques Normais para causar Dano Cryo.<br><br> Enquanto sob o estado do Gelo Rápido, Aloy não pode obter efeitos de Bobina.<br> O efeito de Bobina é excluído 30 segundos após sair da batalha.',
+
+  'Barão Coelho<br> Continuamente provoca o inimigo, atraindo seus golpes.<br> A vida do Barão Coelho aumenta com a Vida máxima de Amber.<br> Quando destruído ou quando o tempo expirar, Barão Coelho explode, infligindo Dano Pyro em uma AdE.<br><br> Manter pressionado<br> Ajusta a direção do lançamento do Barão Coelho.<br> Quanto mais tempo o botão for pressionado, mais distante é o lançamento.',
+
+  'Condensa uma atmosfera poderosa para quebrar as correntes da terra. Inflige Dano Anemo contra os inimigos próximos e salta no ar, entrando no estado "Postura do Vento".<br><br> Postura do Vento<br>  Quando o Andarilho está nesse estado, não consegue realizar Ataques Imersivos, e ao realizar Ataques Normais ou Carregados, eles serão convertidos em Vazio: Obliteração e Vazio: Lâmina de Vento respectivamente, aumentando o Dano causado e a AdE. Esses Danos são considerados Dano de Ataque Normal e Dano de Ataque Carregado respectivamente. Ao realizar Vazio: Lâmina de Vento, não consumirá Stamina.<br>  Quando o Andarilho estiver nesse estado, flutuará continuamente no ar, e seus movimentos possuirão as seguintes características:<br>· Enquanto estiver flutuando, consumirá continuamente "Poder Vazio";<br>· Ao correr, consumirá Poder Vazio adicional para acelerar no ar; ao Manter Pressionado para correr, consumirá continuamente Poder Vazio para se mover rapidamente. Esse efeito substituirá a corrida;<br>· Ao saltar, consumirá Poder do Vazio adicional para flutuar mais alto; ao Manter Pressionado para saltar, consumirá continuamente Poder Vazio para aumentar sua altitude.<br><br> Quando Poder Vazio for exaurido, esse estado terminará.<br> Lançar a habilidade novamente durante a duração da Postura do Vento também encerrará esse estado.',
+
+  'Invoca uma flor gélida que lança os inimigos próximos para o ar, causando Dano Cryo em uma AdE.',
+
+  'Kamisato Ayato troca de posição e entra no estado "Reflexão Torrencial".<br> Após esta troca, ele deixará uma Ilusão de Água na sua localização original. Após sua formação, a Ilusão de Água explodirá se os oponentes estiverem próximos ou quando sua duração terminar, infligindo Dano Hydro em uma AdE.<br><br> Reflexão Torrencial<br> Nesse estado, Kamisato Ayato usa sua Espada Aquática para realizar ataques rápidos, fazendo com que o Dano de seus Ataques Normais seja convertido em Dano Hydro em AdE que não pode ser substituído pelo encantamento de outros elementos.<br> Além disso, também possui as seguintes propriedades:<br>· Quando os ataques da Espada Aquática atingem um inimigo, darão a Ayato o efeito de Ondas Brilhantes, aumentando o Dano infligido pela Espada Aquática baseado na Vida Máxima atual de Ayato. O número máximo inicial de acúmulos de Ondas Brilhantes é 4, e é possível obter um acúmulo através da Espada Aquática a cada 0.1s. Esse efeito desaparecerá quando a Reflexão Torrencial acabar.<br>· Aumenta a Resistência Contra Interrupção de Kamisato Ayato.<br>· Se torna incapaz de usar Ataques Carregados ou Imersivos.<br>A Reflexão Torrencial será eliminada quando Ayato sair do campo de batalha. Usar Arte Kamisato: Beleza Refletida novamente enquanto ainda estiver no estado Reflexão Torrencial encerrará tal estado.',
+
+  'Controla um Espírito Sérico, fazendo-o atacar os inimigos próximos, causando Dano Dendro.<br> Depois de realizar até 3 ataques, ou quando não houverem inimigos próximos, o Espírito Sérico retornará, regenerando Vida de todos os personagens da equipe próximos; a quantidade de Vida regenerada é baseada na Vida Máxima de Baizhu.',
+
+  'Invoca gotículas de água que se assemelham a notas musicais que formam um Círculo Melódico, causando Dano Hydro aos oponentes próximos e aplicando o estado Molhado a eles.<br><br> Círculo Melódico<br> Ao acertar, os ataques normais da Barbara curam seus próprios membros de equipe e personagens aliados próximos em uma certa quantidade de Vida, que é escalonado com a Vida Máxima de Barbara.<br> Acertar o Ataque Carregado de Barbara gera 4 vezes a quantidade de cura.<br> Periodicamente regenera a Vida do seu próprio personagem ativo.<br>Aplica o estado Molhado ao personagem e aos oponentes que entram em contato com eles.',
+
+
 ]
 ListaSkill3 = [
   'Sob o comando de Albedo, os cristais Geo surgem e explodem, causando Dano Geo em uma AdE na frente dele. Se houver Radiação Solar no campo criado pelo próprio Albedo, 7 Flores Fatais serão geradas na zona da Radiação Solar, florescendo violentamente e causando Dano Geo em uma AdE.<br><br> O Dano causado pela explosão e da Flor Fatal não gerará Flores Transitórias.',
 
-  'Cria um reino especial, causando várias instâncias de Dano Dendro em AdE.<br>  Se ao lançar possuir Espelhos Cortantes, consumirá todos eles para aumentar o número de vezes de Dano causado.<br> Depois de 2s, se ao lançar essa Habilidade tiver consumido 0/1/2/3 Espelho(s) Cortante(s), gerará 3/2/1/0 Espelho(s) Cortante(s) para Alhaitham.'
+  'Cria um reino especial, causando várias instâncias de Dano Dendro em AdE.<br>  Se ao lançar possuir Espelhos Cortantes, consumirá todos eles para aumentar o número de vezes de Dano causado.<br> Depois de 2s, se ao lançar essa Habilidade tiver consumido 0/1/2/3 Espelho(s) Cortante(s), gerará 3/2/1/0 Espelho(s) Cortante(s) para Alhaitham.',
+
+  'Arremessa uma Bateria cheia com Cryo na direção do alvo antes de ligá-la com uma flecha, causando Dano Cryo em uma AdE.',
+
+  'Dispara uma chuva de flechas, causando Dano em uma AdE Pyro contínuo.',
+
+  'Condensa uma atmosfera poderosa para quebrar as correntes da terra. Inflige Dano Anemo contra os inimigos próximos e salta no ar, entrando no estado "Postura do Vento".<br><br> Postura do Vento<br> Quando o Andarilho está nesse estado, não consegue realizar Ataques Imersivos, e ao realizar Ataques Normais ou Carregados, eles serão convertidos em Vazio: Obliteração e Vazio: Lâmina de Vento respectivamente, aumentando o Dano causado e a AdE. Esses Danos são considerados Dano de Ataque Normal e Dano de Ataque Carregado respectivamente. Ao realizar Vazio: Lâmina de Vento, não consumirá Stamina.<br> Quando o Andarilho estiver nesse estado, flutuará continuamente no ar, e seus movimentos possuirão as seguintes características:<br>· Enquanto estiver flutuando, consumirá continuamente "Poder Vazio";<br>· Ao correr, consumirá Poder Vazio adicional para acelerar no ar; ao Manter Pressionado para correr, consumirá continuamente Poder Vazio para se mover rapidamente. Esse efeito substituirá a corrida;<br>· Ao saltar, consumirá Poder do Vazio adicional para flutuar mais alto; ao Manter Pressionado para saltar, consumirá continuamente Poder Vazio para aumentar sua altitude.<br><br>Quando Poder Vazio for exaurido, esse estado terminará.<br>Lançar a habilidade novamente durante a duração da Postura do Vento também encerrará esse estado.',
+
+  'Ayaka acumula geada com uma pose perfeita, liberando um Granizo Seki no To que avança continuamente para frente.<br><br> Granizo Seki no To<br> Causa Dano Cryo ao cortar continuamente o inimigos que toca com ventos gélidos e afiados como lâminas;<br> Explode após sua duração encerrar, causando Dano Cryo em uma AdE.',
+
+  'Revela um jardim puro que extingue toda a cacofonia.<br> Enquanto esse espaço existir, Lâminas de Flores de Água constantemente cairão e atacarão os inimigos em sua AdE, infligindo Dano Hydro e aumentando o dano do Ataque Normal dos personagens dentro da AdE.',
+
+  'Entra no estado Édito Pulsante, criando um Escudo Impenetrável que possui um efeito de 250% de absorção de Dano Dendro.<br> Enquanto estiver no estado Édito Pulsante, gerará um novo Escudo Impenetrável a cada 2.5s.<br><br> Segundo as circunstâncias abaixo, regenerará Vida para os personagens ativos da sua equipe no campo de batalha, a quantidade regenerada é baseada na Vida Máxima de Baizhu, e atacará os inimigos lançando o Espiriveio, causando Dano Dendro:<br>· Quando um personagem estiver protegido pelo Escudo Impenetrável e um novo Escudo Impenetrável é gerado;<br>· Quando o efeito do Escudo Impenetrável acaba ou quando é destruído.',
+
+  'Cura todas as forças aliadas e seu próprio personagem em uma grande quantidade de Vida que aumenta com a Vida Máxima de Barbara.',
+
+  
 ]
 
 
