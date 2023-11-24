@@ -334,7 +334,23 @@ ListaSkill1 =  [
 
   'Ataque Normal<br> Realiza até 4 ataques com esguichos de água que infligem Dano Hydro.<br><br>  Ataque Carregado<br>  Consome uma certa quantidade de Stamina para infligir Dano Hydro em uma AdE após um curto período de canalização.<br><br> Ataque Imersivo<br> Reunindo o poder do Hydro, Barbara mergulha em direção ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige Dano Hydro em uma AdE durante o impacto com o chão.',
 
+  'Ataque Normal<br> Realiza até 5 golpes consecutivos.<br><br>  Ataque Carregado<br> Drena Stamina ao longo do tempo para realizar cortes contínuos.<br> Ao final da sequência, realiza um corte ainda mais poderoso.<br><br> Ataque Imersivo<br> Mergulha em pleno ar para golpear o chão, danificando inimigos em seu caminho e infligindo dano em uma AdE durante o impacto.',
 
+  'Ataque Normal<br> Realiza até 5 golpes rápidos.<br><br>  Ataque Carregado<br> Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada.<br><br> Ataque Imersivo<br> Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.',
+
+  'Ataque Normal<br> Realiza até 4 golpes com a lança.<br><br>  Ataque Carregado<br>Consome uma certa quantidade de Stamina para se lançar para a frente, infligindo Dano em seu trajeto.<br><br>Ataque Imersivo<br> Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.',
+
+  'Ataque Normal<br> Mira nos alvos com o Monsieur Verite, e com sua câmera personalizada, Charlotte desfere 3 golpes consecutivos, causando Dano Cryo.<br><br> Ataque Carregado<br> Consome uma certa quantidade de Stamina, e depois de uma curta preparação, envia Monsieur Verite para causar Dano Cryo em AdE.<br><br> Ataque Imersivo<br> Reunindo o poder do Cryo, mergulha em direção ao chão, causando Dano contra todos os oponentes no caminho e causando Dano Cryo em AdE ao impactar com o chão.<br><br> Arkhe: Pneuma<br> Periodicamente, ao lançar um Ataque Carregado, um Espinho Espiritual cairá e perfurará os inimigos, causando Dano Cryo em AdE com Pneuma contra os oponentes.',
+
+  'Ataque Normal<br> Realiza até 4 golpes com a lança.<br><br>  Ataque Carregado<br> Consome uma certa quantidade de Stamina para se lançar para a frente, infligindo Dano em seu trajeto.<br><br> Ataque Imersivo<br> Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.',
+
+  'Ataque Normal<br> Realiza até 4 golpes consecutivos.<br><br>  Ataque Carregado<br> Drena Stamina ao longo do tempo para realizar um ataque giratório contínuo contra todos os inimigos próximos.<br> Ao final da sequência, realiza um corte poderoso.<br><br> Ataque Imersivo<br> Mergulha em pleno ar para golpear o chão, danificando inimigos em seu caminho e infligindo Dano em uma AdE durante o impacto.',
+
+  'Ataque Normal<br> Realiza até 4 disparos consecutivos com o arco.<br><br>Ataque Carregado<br> Realiza um Disparo com Mira mais preciso e com mais dano.<br> Enquanto mira, elemento Dendro irá acumular na ponta da flecha. Uma flecha completamente carregada irá causar Dano Dendro.<br><br>  Ataque Imersivo<br> Dispara uma chuva de flechas do ar antes de cair e impactar o chão, causando Dano em uma AdE no impacto.',
+
+  'Ataque Normal<br> Realiza até 4 golpes com a lança.<br><br>  Ataque Carregado<br>Consome uma certa quantidade de Stamina para se lançar para frente, infligindo Dano em seu trajeto.<br><br>Ataque Imersivo<br>Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.',
+
+  
 ]
 ListaSkill2 = [
   'A criação da Radiação Solar causa Dano Geo em uma AdE<br><br> Radiação Solar  Tem as seguintes propriedades: Quando inimigos dentro da área da Radiação Solar são atingidos, a Radiação Solar gerará Flores Transitórias que causam Dano Geo em uma AdE. Dano causado escala conforme a DEF de Albedo.<br> Flores Transitórias só podem ser gerada uma vez a cada 2s. Quando um personagem está localizado no local da Radiação Solar, a Radiação Solar irá acumular o poder Geo, erguendo-os em um pódio cristalizado. Apenas um pódio cristalizado pode existir por vez.<br> Somente é possível existir uma Radiação Solar por vez feita por Albedo, e é considerada como uma Construção Geo.<br><br> Manter pressionado para designar a localização da habilidade.',
@@ -354,6 +370,10 @@ ListaSkill2 = [
   'Controla um Espírito Sérico, fazendo-o atacar os inimigos próximos, causando Dano Dendro.<br> Depois de realizar até 3 ataques, ou quando não houverem inimigos próximos, o Espírito Sérico retornará, regenerando Vida de todos os personagens da equipe próximos; a quantidade de Vida regenerada é baseada na Vida Máxima de Baizhu.',
 
   'Invoca gotículas de água que se assemelham a notas musicais que formam um Círculo Melódico, causando Dano Hydro aos oponentes próximos e aplicando o estado Molhado a eles.<br><br> Círculo Melódico<br> Ao acertar, os ataques normais da Barbara curam seus próprios membros de equipe e personagens aliados próximos em uma certa quantidade de Vida, que é escalonado com a Vida Máxima de Barbara.<br> Acertar o Ataque Carregado de Barbara gera 4 vezes a quantidade de cura.<br> Periodicamente regenera a Vida do seu próprio personagem ativo.<br>Aplica o estado Molhado ao personagem e aos oponentes que entram em contato com eles.',
+
+  'Nada com que se deva preocupar. Se alguém levantar uma mão contra ela ou contra os seus homens, ela se vingará dez vezes mais com espada e trovão.<br><br> Pressionar<br> Acumulando o poder dos raios, Beidou balança sua lâmina para frente ferozmente, causando Dano Electro.<br><br> Manter pressionado<br> Levanta sua arma como um escudo. Dano Máximo absorvido aumenta conforme a Vida Máxima de Beidou.<br> Ataca usando a energia armazenada no Espadão ao soltar ou quando a duração da habilidade expira, causando Dano Electro. Dano causado aumenta com o número de vezes em que Beidou é atacada ao longo da duração da habilidade. O maior Bônus de Dano será atingido quando esse efeito for desencadeado duas vezes.<br>  O escudo possui as seguintes propriedades:<br> Tem 250% de eficiência em absorção de Dano Electro<br> Aplica o Elemento Electro para a Beidou ao ativar.',
+
+  'Bennett coloca todo seu fogo e sua paixão por aventura em sua espada. Os resultados podem variar baseados no quão fervente ele está...<br><br> Pressionar<br> Um único e rápido ataque de chamas que causa Dano Pyro.<br><br> Manter pressionado (Brevemente)<br> Sobrecarrega, resultando em diferentes efeitos quando liberado baseado no Nível de Carga.<br> Nível 1: Ataca duas vezes, causando Dano Pyro e lançando inimigos.<br> Nível 2: Desfere 3 ataques consecutivos que causam um incrível Dano Pyro, mas o último ataque desencadeia uma explosão que lança Bennett e seu inimigo.<br> Bennett não leva nenhum dano ao ser lançado.',
 
 
 ]
@@ -376,7 +396,11 @@ ListaSkill3 = [
 
   'Cura todas as forças aliadas e seu próprio personagem em uma grande quantidade de Vida que aumenta com a Vida Máxima de Barbara.',
 
-  
+  'Relembrando seu abate da grande fera Haishan, Beidou clama pela força monstruosa e relâmpagos para criar um Escudo do Trovão ao seu redor, infligindo Dano Electro aos inimigos próximos.<br><br> Escudo do Trovão<br> Quando Ataques Normais e Carregados atingem, eles criam uma descarga elétrica que pode saltar entre os inimigos, infligindo Dano Electro.<br>  Aumenta a resistência do personagem a interrupções e diminui o Dano recebido.<br><br> No máximo 1 descarga de relâmpago pode ser desencadeada por segundo.',
+
+  'Bennett pula, causando Dano Pyro, e cria um Campo de Inspiração.<br><br> Campo de Inspiração<br>·Se a Vida dos personagens dentro da AdE for igual ou cair para menos de 70%, regenerará Vida continuamente. A regeneração de Vida se baseia na Vida Máxima de Bennett.<br>·Se a Vida dos personagens dentro da AdE for maior que 70%, receberão um Bônus de ATQ proporcional ao Ataque Básico de Bennett.<br>·Aplica-se aos personagens dentro da AdE Elemento Pyro.',
+
+
 ]
 
 
