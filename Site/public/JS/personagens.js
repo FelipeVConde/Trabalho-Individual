@@ -28,7 +28,7 @@ ListaPersonagem = [
   'ganyu',
   'gorou',
   'heizou',
-  'hu tao',
+  'hutao',
   'itto',
   'jean',
   'kaeya',
@@ -75,7 +75,7 @@ ListaPersonagem = [
   'yaoyao',
   'yelan',
   'yoimiya',
-  'yun jin',
+  'yunjin',
   'zhongli'
 ]
 ListaIcon = [
@@ -257,13 +257,69 @@ ListaDescricao = [
 
   'Srta. Navia é, sem dúvida, uma senhorita perfeita de Fontaine.<br> Ela costumava vestir roupas complexas e usar um chapéu requintado, com um guarda-chuva decorado com laços e pedras preciosas em seu braço.<br> Então, ela corria pelas ruas e becos da Corte de Fontaine, pelos campos do Monte Automnequi e pelos recantos desconhecidos do Fleuve Cendre.',
 
-  ''
+  'Neuvillette é um personagem Hydro em Genshin Impact.',
+
+  'Dançarina do Teatro Zubayr, a dança de Nilou é elegante e graciosa - no entanto, fora dos holofotes do palco, ela é como qualquer garota de sua idade; calorosa, sorridente e amigável.',
+
+  'Tianquan dos Qixing de Liyue. Ela detém uma posição de riqueza além de muitas outras em Teyvat. A posição e as habilidades de Ningguang permitiram que ela construísse sua maior conquista, a flutuante Câmara de Jade que zela por toda Liyue.',
+
+  'Embora ainda não seja um cavaleiro, ela procura um dia se juntar aos Cavaleiros de Favonius servindo primeiro como uma empregada obediente.',
+
+  'Ressuscitada como um zumbi pelos adepti, ela acabou aos cuidados de Baizhu e agora trabalha no Chalé de Bubu no Porto de Liyue.',
+
+  'A Shogun Raiden é uma marionete, e serve como avatar de Beelzebul, a atual Arconte Electro de Inazuma, enquanto Ei medita eternamente dentro do Plano da Eutimia.',
+
+  'Abandonado quando criança, Razor foi acolhido pelo Lobo do Norte, Andrius, e criado por sua matilha de lobos no Reino dos Lobos. Após um encontro casual com Varka, o atual Grande Mestre dos Cavaleiros de Favonius e Cavaleiro de Boreas, ele começou a se integrar aos humanos novamente.',
+
+  'Membro da Igreja de Favonius em Mondstadt.',
+
+  'Filha adotiva do Clã Kujou da Comissão Tenryou. Leal a seu clã e ao Shogun, Kujou Sara cumpre suas ordens de acordo com a vontade do Shogun.',
+
+  'Ninja do Shiyuumatsu-Ban que está lutando para crescer. Sayu acredita que dormir pode ajudá-la a crescer, e é por isso que ela prefere usar suas técnicas ninja para se esconder e dormir.',
+
+  'Discipula adepti com um ar muito incomum sobre ela. Tendo passado muito tempo vivendo em isolamento nas montanhas.de Liyue, ela se tornou tão fria e distante quanto os próprios adepti.',
+
+  'Alquimista especializada em bioalquimia, ela também atua como assistente de Albedo, o alquimista chefe dos Cavaleiros de Favonius.',
+
+  'Childe é o Nº 11 dos Onze Mensageiros dos Fatui. Seguindo o perigo onde quer que vá, Childe está sempre ansioso por um desafio. Ele é considerado um dos membros mais perigosos dos Mensageiros.',
+
+  'Vindo de Mondstadt, ele é empregado do Clã Kamisato e um animado "Mediador" em Inazuma.',
+
+  'Jovem pesquisador Amurta que conhece bastante de botânica e que atualmente atua como um Patrulheiro Florestal na Floresta Avidya. Ele é extremamente sincero com um bom coração — e muito bom na orientação até mesmo dos alunos mais monótonos.',
+
+  'O Viajante é o protagonista jogável de Genshin Impact. No início do jogo existem 2 gêmeos, uma garota e um garoto, que viajam pelo universo até que são atacados por uma Deusa Desconhecido que captura um dos gêmeos, deixa o outro gêmeo desacordado por um tempo não determinado e sela seus caminhos de viagem deixando-os presos em Teyvat. Após um tempo o gêmeo desacordado acorda e parte em uma jornada em busca do irmão/irmã perdido, acompanhado pela Paimon.',
+
+  'bardo amante do vinho e de espírito livre em Mondstadt e o atual corpo mortal de Barbatos, o Arconte Anemo. Ele também é um personagem Anemo jogável em Genshin Impact.',
+
+  'Wriothesley é um personagem jogável Cryo em Genshin Impact.',
+
+  'Chefe de cozinha do Restaurante Wanmin e o administra ao lado de seu pai Chef Mao. Como chef, Xiangling não tem medo de experimentar receitas diferentes ou ingredientes "exóticos" ... Tornando seus pratos únicos.',
+
+  'Nome de Yaksha Alatus, é um adeptus e o único membro restante dos Cinco Yakshas enviados por Morax para subjugar os espíritos demoníacos que atormentavam Liyue. Ele atualmente mora no Albergue Wangshu, onde se isola das multidões e de interações humanas.',
+
+  'Segundo filho do dono da Guilda de Comerciantes de Feiyun, um grupo influente em Liyue, e também é um autoproclamado praticante das artes do Clã Guhua.',
+
+  "Rock 'N' Roll é um estilo de música relativamente impopular em Liyue, tendo sido recentemente trazido de Fontaine. Xinyan, no entanto, adora o som — e ela está lentamente, mas seguramente, acumulando uma base de fãs própria enquanto se apresenta no Porto de Liyue.",
+
+  'Senhorita Guuji do Grande Santuário Narukami e proprietária da Editora Yae, que carrega seu sobrenome.',
+
+  'Consultora jurídica do Porto de Liyue, metade Besta Iluminada, assim como Ganyu. Nascida em uma época de paz, ela é uma das poucas Bestas Iluminadas que não assinou um contrato com Rex Lápis, porém seu trabalho faz com que ela lide com contratos constantemente.',
+
+  'Discípula mais jovem da Adeptus Corista. Uma "pequena adulta" carinhosa e gentil.',
+
+  'Misteriosa que afirma trabalhar para o Ministério dos Assuntos Civis de Liyue. No entanto, ela é na verdade a chefe da Casa de Chá Yanshang.',
+
+  'Filha de Naganohara Ryuunosuke e a atual proprietária da Fogos de Artifício Naganohara. Com seus fogos de artifício coloridos e personalidade extrovertida, Yoimiya é amada por todos na Ilha Narukami, que afirmam que o verão não é o mesmo sem ela.',
+
+  'Diretora atual da Trupe de Ópera Yun-Han, e também é uma figura muito conhecida no Porto de Liyue. Uma dançarina, cantora e compositora de prestígio que se apresenta na Casa de Chá Heyu.',
+
+  'Consultor da Casa Funerária de Wangsheng que aparece pela primeira vez nas Missões do Arconte'
 ]
 ListaSkill1 =  [
   'Ataque Normal<br> Realiza até 5 golpes rápidos.<br><br> Ataque Carregado<br>  Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada.<br><br> Ataque Imersivo<br> Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.',
 
   'Ataque Normal<br> Realiza até 5 golpes rápidos.<br><br>Ataque Carregado<br> Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada.<br><br> Ataque Imersivo<br> Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.',
-  
+
 
 ]
 ListaSkill2 = [
