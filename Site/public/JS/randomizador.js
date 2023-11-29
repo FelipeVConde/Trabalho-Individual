@@ -84,8 +84,6 @@ var ponto = 0
 var posicao = parseInt(Math.random() * ListaPersonagem.length)
 
 var icon = ListaPersonagem[posicao]
-div_caracter_icon.innerHTML = `<img src="assets/imgs/iconCaracter/${icon}.webp" alt="${ListaPersonagem[posicao]}" height="115px">
-    `
 
 function Randomizar() {
     posicao = parseInt(Math.random() * ListaPersonagem.length);
@@ -101,16 +99,23 @@ function VerificarAcerto(event) {
 
     if (event.keyCode === 13) {
         if (personagem == ListaPersonagem[posicao]) {
-            alert("acertou")
             ponto += 100
             div_pontuacao.innerHTML = `
             usuario:<br><br>
             Pontos: ${ponto}
             `
+            img_paimon.src = 'assets/imgs/Background/acerto.webp'
+
             Randomizar()
-            
+
+            setTimeout(function(){
+                img_paimon.src = 'assets/imgs/Background/esperando.webp';
+            }, 2000);            
         } else {
-            alert("errou")
+            img_paimon.src = 'assets/imgs/Background/erro.webp'
+            setTimeout(function(){
+                img_paimon.src = 'assets/imgs/Background/esperando.webp';
+            }, 3000);
             if (ponto >= 50) {
                 ponto -= 50
                 div_pontuacao.innerHTML = `

@@ -43,95 +43,103 @@
   </div>
 
   <div class="div_corpo">
-    <div>
-      
+    <div class="div_navegar">
+
       <button class="btBuscar" onclick="Buscar()">
-        buscar
-      </button><br>
+        Buscar
+      </button>
+      <div>
+        <button class="btBuscar">
+          Anterior
+        </button>
 
-      <select id="select_personagem">
-        <option disabled selected>Personagem</option>
-        <option value="albedo">Albedo</option>
-        <option value="alhaitham">Alhaitham</option>
-        <option value="aloy">Aloy</option>
-        <option value="amber">Amber</option>
-        <option value="andarilho">Andarilho</option>
-        <option value="ayaka">Ayaka</option>
-        <option value="ayato">Ayato</option>
-        <option value="baizhu">Baizhu</option>
-        <option value="barbara">Barbara</option>
-        <option value="beidou">Beidou</option>
-        <option value="bennett">bennett</option>
-        <option value="candace">Candace</option>
-        <option value="charlotte">Charlotte</option>
-        <option value="chevreuse">Chevreuse</option>
-        <option value="chongyun">Chongyun</option>
-        <option value="collei">Collei</option>
-        <option value="cyno">Cyno</option>
-        <option value="dehya">Dehya</option>
-        <option value="diluc">Diluc</option>
-        <option value="diona">Diona</option>
-        <option value="dori">Dori</option>
-        <option value="eula">Eula</option>
-        <option value="faruzan">Faruzan</option>
-        <option value="fischl">Fischl</option>
-        <option value="freminet">Freminet</option>
-        <option value="furina">Furina</option>
-        <option value="ganyu">Ganyu</option>
-        <option value="gorou">Gorou</option>
-        <option value="heizou">Heizou</option>
-        <option value="hutao">Hu Tao</option>
-        <option value="itto">Itto</option>
-        <option value="jean">Jean</option>
-        <option value="kaeya">Kaeya</option>
-        <option value="kaveh">Kaveh</option>
-        <option value="kazuha">Kazuha</option>
-        <option value="keqing">Keqing</option>
-        <option value="kirara">Kirara</option>
-        <option value="klee">Klee</option>
-        <option value="kokomi">Kokomi</option>
-        <option value="kuki">Kuki</option>
-        <option value="layla">Layla</option>
-        <option value="lisa">Lisa</option>
-        <option value="lumine">Lumine</option>
-        <option value="lynette">Lynette</option>
-        <option value="lyney">Lyney</option>
-        <option value="mika">Mika</option>
-        <option value="mona">Mona</option>
-        <option value="nahida">Nahida</option>
-        <option value="navia">Navia</option>
-        <option value="neuvillette">Neuvillette</option>
-        <option value="nilou">Nilou</option>
-        <option value="ningguang">Ningguang</option>
-        <option value="noelle">Noelle</option>
-        <option value="qiqi">Qiqi</option>
-        <option value="raiden">Raiden</option>
-        <option value="razor">Razor</option>
-        <option value="rosaria">Rosaria</option>
-        <option value="sara">Sara</option>
-        <option value="sayu">Sayu</option>
-        <option value="shenhe">Shenhe</option>
-        <option value="sucrose">Sucrose</option>
-        <option value="tartaglia">Tartaglia</option>
-        <option value="thoma">Thoma</option>
-        <option value="tighnari">Tighnari</option>
-        <option value="traveler">Traveler</option>
-        <option value="venti">Venti</option>
-        <option value="wriothesley">Wriothesley</option>
-        <option value="xiangling">Xiangling</option>
-        <option value="xiao">Xiao</option>
-        <option value="xingqiu">Xingqiu</option>
-        <option value="xinyan">Xinyan</option>
-        <option value="yae">Yae</option>
-        <option value="yanfei">Yanfei</option>
-        <option value="yaoyao">Yaoyao</option>
-        <option value="yelan">Yelan</option>
-        <option value="yoimiya">Yoimiya</option>
-        <option value="yunjin">Yun jin</option>
-        <option value="zhongli">Zhongli</option>
-      </select>      
-
-    </div>
+        <button class="btBuscar">
+          Proximo
+        </button>
+      </div>
+      <br>
+    </div><br>
+    <select id="select_personagem">
+      <option disabled selected>Personagem</option>
+      <option value="albedo">Albedo</option>
+      <option value="alhaitham">Alhaitham</option>
+      <option value="aloy">Aloy</option>
+      <option value="amber">Amber</option>
+      <option value="andarilho">Andarilho</option>
+      <option value="ayaka">Ayaka</option>
+      <option value="ayato">Ayato</option>
+      <option value="baizhu">Baizhu</option>
+      <option value="barbara">Barbara</option>
+      <option value="beidou">Beidou</option>
+      <option value="bennett">bennett</option>
+      <option value="candace">Candace</option>
+      <option value="charlotte">Charlotte</option>
+      <option value="chevreuse">Chevreuse</option>
+      <option value="chongyun">Chongyun</option>
+      <option value="collei">Collei</option>
+      <option value="cyno">Cyno</option>
+      <option value="dehya">Dehya</option>
+      <option value="diluc">Diluc</option>
+      <option value="diona">Diona</option>
+      <option value="dori">Dori</option>
+      <option value="eula">Eula</option>
+      <option value="faruzan">Faruzan</option>
+      <option value="fischl">Fischl</option>
+      <option value="freminet">Freminet</option>
+      <option value="furina">Furina</option>
+      <option value="ganyu">Ganyu</option>
+      <option value="gorou">Gorou</option>
+      <option value="heizou">Heizou</option>
+      <option value="hutao">Hu Tao</option>
+      <option value="itto">Itto</option>
+      <option value="jean">Jean</option>
+      <option value="kaeya">Kaeya</option>
+      <option value="kaveh">Kaveh</option>
+      <option value="kazuha">Kazuha</option>
+      <option value="keqing">Keqing</option>
+      <option value="kirara">Kirara</option>
+      <option value="klee">Klee</option>
+      <option value="kokomi">Kokomi</option>
+      <option value="kuki">Kuki</option>
+      <option value="layla">Layla</option>
+      <option value="lisa">Lisa</option>
+      <option value="lumine">Lumine</option>
+      <option value="lynette">Lynette</option>
+      <option value="lyney">Lyney</option>
+      <option value="mika">Mika</option>
+      <option value="mona">Mona</option>
+      <option value="nahida">Nahida</option>
+      <option value="navia">Navia</option>
+      <option value="neuvillette">Neuvillette</option>
+      <option value="nilou">Nilou</option>
+      <option value="ningguang">Ningguang</option>
+      <option value="noelle">Noelle</option>
+      <option value="qiqi">Qiqi</option>
+      <option value="raiden">Raiden</option>
+      <option value="razor">Razor</option>
+      <option value="rosaria">Rosaria</option>
+      <option value="sara">Sara</option>
+      <option value="sayu">Sayu</option>
+      <option value="shenhe">Shenhe</option>
+      <option value="sucrose">Sucrose</option>
+      <option value="tartaglia">Tartaglia</option>
+      <option value="thoma">Thoma</option>
+      <option value="tighnari">Tighnari</option>
+      <option value="traveler">Traveler</option>
+      <option value="venti">Venti</option>
+      <option value="wriothesley">Wriothesley</option>
+      <option value="xiangling">Xiangling</option>
+      <option value="xiao">Xiao</option>
+      <option value="xingqiu">Xingqiu</option>
+      <option value="xinyan">Xinyan</option>
+      <option value="yae">Yae</option>
+      <option value="yanfei">Yanfei</option>
+      <option value="yaoyao">Yaoyao</option>
+      <option value="yelan">Yelan</option>
+      <option value="yoimiya">Yoimiya</option>
+      <option value="yunjin">Yun jin</option>
+      <option value="zhongli">Zhongli</option>
+    </select>
     <div id="div_informações">
       <div class="container1">
         <div class="div_icon">

@@ -3,6 +3,12 @@ body {
     color: white;
 }
 
+.div_navegar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .btBuscar {
     width: 10%;
     padding: 16px 0px;
@@ -84,6 +90,12 @@ body {
 
 .container3 .div_skill3 {
     display: flex;
+    border: solid #1b1d2a 20px;
+    border-radius: 10%;
+}
+
+.container3 video{
+    border: solid #1b1d2a 10px;
 }
 
 .container3 .div_skill3 p {
