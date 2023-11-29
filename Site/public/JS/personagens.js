@@ -160,7 +160,7 @@ ListaIcon = [
 ]
 ListaDescricao = [
   'O misterioso Albedo é o Chefe Alquimista e Capitão da Equipe de Investigação dos Cavaleiros de Favonius, com Sucrose como sua assistente. Ele tem um desejo infinito de aprender sobre o mundo de Teyvat, estudando cuidadosamente todos os objetos ao seu redor.',
-  
+
   'O atual Escriba da Academia de Sumeru, um homem de grande inteligência e talento. Vive sua vida livre e despreocupado, sendo uma pessoa muito difícil de se encontrar.',
 
   'Protagonista do jogo Horizon Zero Dawn, e é apresentada como um personagem de Collab (colaboração) entre Guerrilla e miHoYo. Aloy foi lançada por tempo limitado na Versão 2.1 no PlayStation e na Versão 2.2 em todos as plataformas.',
@@ -315,7 +315,7 @@ ListaDescricao = [
 
   'Consultor da Casa Funerária de Wangsheng que aparece pela primeira vez nas Missões do Arconte'
 ]
-ListaSkill1 =  [
+ListaSkill1 = [
   'Ataque Normal<br> Realiza até 5 golpes rápidos.<br><br> Ataque Carregado<br>  Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada.<br><br> Ataque Imersivo<br> Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.', //albedo
 
   'Ataque Normal<br> Realiza até 5 golpes rápidos.<br><br>Ataque Carregado<br> Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada.<br><br> Ataque Imersivo<br> Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.', //alhaitham
@@ -787,6 +787,129 @@ ListaSkill3 = [
   'Traz uma estrela cadente em direção à terra, infligindo Dano Geo massivo nos inimigos pegos em sua AdE e aplicando o efeito Petrificante<br>Petrificação<br>Inimigos afetados pelo efeito Petrificante não podem se mover.' //zhongli
 ]
 
+var posicao = 0
+
+function Anterior() {
+  if (posicao > 0) {
+    posicao -= 1
+    div_informações.innerHTML = `
+      <div class="container1">
+        <div class="div_icon">
+          <img src="assets/imgs/iconCaracter/${ListaPersonagem[posicao]}.webp" alt="${ListaPersonagem[posicao]}">
+        </div>
+        <div class="div_contexto">
+          <h1>${ListaPersonagem[posicao]}</h1>
+          <p>
+            ${ListaDescricao[posicao]}
+          </p><br>
+          <img class="img_arma" src="assets/Personagens/${ListaPersonagem[posicao]}/${ListaPersonagem[posicao]}_weapon.webp" alt="">
+          <br><br>
+          <img class="img_splash" src="assets/Personagens/${ListaPersonagem[posicao]}/${ListaPersonagem[posicao]}_gacha_splash.webp" alt="">
+        </div>
+        <div class="div_card">
+          <img src="assets/Personagens/${ListaPersonagem[posicao]}/${ListaPersonagem[posicao]}_gacha_card.webp" alt="${ListaPersonagem[posicao]}_gacha_card">
+        </div>
+      </div>
+
+      <div class="container3">
+        <h1>Habilidades</h1>
+        <div class="div_skill3">
+          <video autoplay muted loop src="assets/Personagens/${ListaPersonagem[posicao]}/${ListaPersonagem[posicao]}_skill3.mp4"></video>
+
+          <p>
+            ${ListaSkill3[posicao]}
+          </p>
+        </div>
+        <div class="div_skill1">
+          <p>
+            ${ListaSkill1[posicao]}
+          </p>
+          <video autoplay muted loop src="assets/Personagens/${ListaPersonagem[posicao]}/${ListaPersonagem[posicao]}_skill1.mp4"></video>
+        </div>
+        <div class="div_skill2">
+          <video autoplay muted loop src="assets/Personagens/${ListaPersonagem[posicao]}/${ListaPersonagem[posicao]}_skill2.mp4"></video>
+          <p>
+            ${ListaSkill2[posicao]}
+          </p>
+        </div>
+      </div>
+
+      <div class="container2">
+        <h1>GALERIA</h1>
+        <div class="div_idle1">
+          <video autoplay muted loop src="assets/Personagens/${ListaPersonagem[posicao]}/${ListaPersonagem[posicao]}_idle1.mp4"></video>
+        </div>
+        <div class="div_spin">
+          <video autoplay muted loop src="assets/Personagens/${ListaPersonagem[posicao]}/${ListaPersonagem[posicao]}_360.mp4"></video>
+        </div>
+        <div class="div_idle2">
+          <video autoplay muted loop src="assets/Personagens/${ListaPersonagem[posicao]}/${ListaPersonagem[posicao]}_idle2.mp4"></video>
+        </div>
+      </div>
+            `
+  }
+}
+
+function Proximo() {
+  if (posicao < ListaPersonagem.length - 1) {
+    posicao += 1
+    div_informações.innerHTML = `
+      <div class="container1">
+        <div class="div_icon">
+          <img src="assets/imgs/iconCaracter/${ListaPersonagem[posicao]}.webp" alt="${ListaPersonagem[posicao]}">
+        </div>
+        <div class="div_contexto">
+          <h1>${ListaPersonagem[posicao]}</h1>
+          <p>
+            ${ListaDescricao[posicao]}
+          </p><br>
+          <img class="img_arma" src="assets/Personagens/${ListaPersonagem[posicao]}/${ListaPersonagem[posicao]}_weapon.webp" alt="">
+          <br><br>
+          <img class="img_splash" src="assets/Personagens/${ListaPersonagem[posicao]}/${ListaPersonagem[posicao]}_gacha_splash.webp" alt="">
+        </div>
+        <div class="div_card">
+          <img src="assets/Personagens/${ListaPersonagem[posicao]}/${ListaPersonagem[posicao]}_gacha_card.webp" alt="${ListaPersonagem[posicao]}_gacha_card">
+        </div>
+      </div>
+
+      <div class="container3">
+        <h1>Habilidades</h1>
+        <div class="div_skill3">
+          <video autoplay muted loop src="assets/Personagens/${ListaPersonagem[posicao]}/${ListaPersonagem[posicao]}_skill3.mp4"></video>
+
+          <p>
+            ${ListaSkill3[posicao]}
+          </p>
+        </div>
+        <div class="div_skill1">
+          <p>
+            ${ListaSkill1[posicao]}
+          </p>
+          <video autoplay muted loop src="assets/Personagens/${ListaPersonagem[posicao]}/${ListaPersonagem[posicao]}_skill1.mp4"></video>
+        </div>
+        <div class="div_skill2">
+          <video autoplay muted loop src="assets/Personagens/${ListaPersonagem[posicao]}/${ListaPersonagem[posicao]}_skill2.mp4"></video>
+          <p>
+            ${ListaSkill2[posicao]}
+          </p>
+        </div>
+      </div>
+
+      <div class="container2">
+        <h1>GALERIA</h1>
+        <div class="div_idle1">
+          <video autoplay muted loop src="assets/Personagens/${ListaPersonagem[posicao]}/${ListaPersonagem[posicao]}_idle1.mp4"></video>
+        </div>
+        <div class="div_spin">
+          <video autoplay muted loop src="assets/Personagens/${ListaPersonagem[posicao]}/${ListaPersonagem[posicao]}_360.mp4"></video>
+        </div>
+        <div class="div_idle2">
+          <video autoplay muted loop src="assets/Personagens/${ListaPersonagem[posicao]}/${ListaPersonagem[posicao]}_idle2.mp4"></video>
+        </div>
+      </div>
+            `
+  }
+}
 
 function Buscar() {
   for (posicao = 0; posicao <= ListaPersonagem.length; posicao += 1) {
@@ -846,6 +969,7 @@ function Buscar() {
         </div>
       </div>
             `
+    break;
     }
   }
 

@@ -226,7 +226,7 @@ SELECT personagem.nome, personagem.visão, personagem.nação, personagem.rarida
 SELECT usuario.*, personagem.* FROM usuario
     JOIN personagem
         ON idPersonagem = fkPersonagem
-WHERE personagem.nome ='Zhongli';
+WHERE personagem.nome ='Gorou';
 
 SELECT usuario.nome, personagem.nome, 
 
