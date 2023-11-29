@@ -102,3 +102,10 @@ video {
 a {
     color: #c79e2e;
 }
+
+.zhongli {
+    height: 300px;
+    position: absolute;
+    bottom: -55px; 
+    left: 0;
+}

@@ -96,8 +96,8 @@ function Randomizar() {
 }
 
 function VerificarAcerto(event) {
-    var personagem = nome_personagem_input.value
-    personagem.toLowerCase();
+    var NomePersonagem = nome_personagem_input.value
+    var personagem = NomePersonagem.toLowerCase();
 
     if (event.keyCode === 13) {
         if (personagem == ListaPersonagem[posicao]) {
