@@ -160,9 +160,9 @@ ListaPersonagem = [
 ]
 
 function Randomizar(){
-    var posicao = parseInt(Math.random() * ListaIcon.length)
-    var icon = ListaIcon[posicao]
-    div_caracter_icon.innerHTML =`<img src="${icon}" alt="${ListaPersonagem[posicao]}" height="115px">
+    var posicao = parseInt(Math.random() * ListaPersonagem.length)
+    var icon = ListaPersonagem[posicao]
+    div_caracter_icon.innerHTML =`<img src="assets/imgs/iconCaracter/${icon}.webp" alt="${ListaPersonagem[posicao]}" height="115px">
     `
 }
 
