@@ -13,7 +13,7 @@
   <link rel="icon" href="assets/imgs/Logo/Logo.jpg">
 </head>
 
-<body>
+<body onload="Randomizar()">
   <div class="header">
     <div class="container">
       <img src="assets/imgs/Logo/Genshin_Impact_logo.svg.png" alt="genshin logo" height="70px">
@@ -51,12 +51,12 @@
         </button><br>
 
         <div id="div_caracter_icon">
-          <img src="assets/imgs/iconCaracter/ayaka.webp" alt="" height="115px">
+          <!-- <img src="assets/imgs/iconCaracter/ayaka.webp" alt="" height="115px"> -->
         </div>
 
         <label for="nome_personagem_input" style="color: white;">Nome do personagem:</label><br>
 
-        <input onkeydown="VerificarAcerto(Enter)" type="text" id="nome_personagem_input">
+        <input onkeydown="VerificarAcerto(event)" type="text" id="nome_personagem_input">
       </div>
 
     </div>
