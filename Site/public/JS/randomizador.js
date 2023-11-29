@@ -80,10 +80,10 @@ ListaPersonagem = [
 ]
 
 var ponto = 0
-
 var posicao = parseInt(Math.random() * ListaPersonagem.length)
-
 var icon = ListaPersonagem[posicao]
+
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
 function Randomizar() {
     posicao = parseInt(Math.random() * ListaPersonagem.length);
@@ -101,7 +101,7 @@ function VerificarAcerto(event) {
         if (personagem == ListaPersonagem[posicao]) {
             ponto += 100
             div_pontuacao.innerHTML = `
-            usuario:<br><br>
+            usuario: <span id="b_usuario"></span><br><br>
             Pontos: ${ponto}
             `
             img_paimon.src = 'assets/imgs/Background/acerto.webp'
@@ -119,7 +119,7 @@ function VerificarAcerto(event) {
             if (ponto >= 50) {
                 ponto -= 50
                 div_pontuacao.innerHTML = `
-                    usuario:<br><br>
+                    usuario: <span id="b_usuario"></span><br><br>
                     Pontos: ${ponto}
                 `
             }
