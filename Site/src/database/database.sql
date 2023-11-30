@@ -232,3 +232,55 @@ WHERE personagem.nome ='Gorou';
 SELECT usuario.nome, personagem.nome, 
 
 TRUNCATE usuario;
+
+INSERT INTO usuario VALUES
+	(null, 'Antonio', 'antonio@gmail.com', '12345678', '0', '21'),
+    (null, 'Maria', 'maria@gmail.com', '12345678', '0', '42'),
+	(null, 'João', 'joao@gmail.com', '12345678', '0', '15'),
+	(null, 'Camila', 'camila@gmail.com', '12345678', '0', '63'),
+	(null, 'Rafael', 'rafael@gmail.com', '12345678', '0', '37'),
+	(null, 'Ana', 'ana@gmail.com', '12345678', '0', '51'),
+	(null, 'Pedro', 'pedro@gmail.com', '12345678', '0', '29'),
+	(null, 'Isabel', 'isabel@gmail.com', '12345678', '0', '18'),
+	(null, 'Lucas', 'lucas@gmail.com', '12345678', '0', '46'),
+	(null, 'Carolina', 'carolina@gmail.com', '12345678', '0', '55'),
+	(null, 'Gabriel', 'gabriel@gmail.com', '12345678', '0', '12'),
+	(null, 'Fernanda', 'fernanda@gmail.com', '12345678', '0', '33'),
+	(null, 'Henrique', 'henrique@gmail.com', '12345678', '0', '24'),
+	(null, 'Juliana', 'juliana@gmail.com', '12345678', '0', '70'),
+	(null, 'Leonardo', 'leonardo@gmail.com', '12345678', '0', '6'),
+	(null, 'Mariana', 'mariana@gmail.com', '12345678', '0', '58'),
+	(null, 'Rodrigo', 'rodrigo@gmail.com', '12345678', '0', '49'),
+	(null, 'Amanda', 'amanda@gmail.com', '12345678', '0', '21'),
+	(null, 'Felipe', 'felipe@gmail.com', '12345678', '0', '36'),
+	(null, 'Beatriz', 'beatriz@gmail.com', '12345678', '0', '67'),
+	(null, 'Guilherme', 'guilherme@gmail.com', '12345678', '0', '3');
+    
+INSERT INTO usuario VALUES
+	(null, 'Laura', 'laura@gmail.com', '12345678', '0', '45'),
+(null, 'Tiago', 'tiago@gmail.com', '12345678', '0', '42'),
+(null, 'Carla', 'carla@gmail.com', '12345678', '0', '40'),
+(null, 'Vinícius', 'vinicius@gmail.com', '12345678', '0', '44'),
+(null, 'Julia', 'julia@gmail.com', '12345678', '0', '43'),
+(null, 'Luciano', 'luciano@gmail.com', '12345678', '0', '41'),
+(null, 'Isadora', 'isadora@gmail.com', '12345678', '0', '46'),
+(null, 'Renan', 'renan@gmail.com', '12345678', '0', '40'),
+(null, 'Aline', 'aline@gmail.com', '12345678', '0', '44'),
+(null, 'Gustavo', 'gustavo@gmail.com', '12345678', '0', '42'),
+(null, 'Fernanda', 'fernanda@gmail.com', '12345678', '0', '43'),
+(null, 'Henrique', 'henrique@gmail.com', '12345678', '0', '41'),
+(null, 'Raquel', 'raquel@gmail.com', '12345678', '0', '40'),
+(null, 'Diego', 'diego@gmail.com', '12345678', '0', '46'),
+(null, 'Mariana', 'mariana@gmail.com', '12345678', '0', '44'),
+(null, 'Rodrigo', 'rodrigo@gmail.com', '12345678', '0', '45'),
+(null, 'Camila', 'camila@gmail.com', '12345678', '0', '42'),
+(null, 'Felipe', 'felipe@gmail.com', '12345678', '0', '40'),
+(null, 'Ana Clara', 'anaclara@gmail.com', '12345678', '0', '43'),
+(null, 'Ricardo', 'ricardo@gmail.com', '12345678', '0', '41');
+
+SELECT personagem.nome, fkPersonagem, COUNT(*) as quantidade_usuarios
+FROM usuario
+	join personagem on fkPersonagem = idPersonagem
+GROUP BY fkPersonagem
+ORDER BY quantidade_usuarios DESC
+LIMIT 5;
