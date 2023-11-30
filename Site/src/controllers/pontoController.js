@@ -1,25 +1,24 @@
-var pontosModel = require("../models/pontoModel");
+var pontoModel = require("../models/pontoModel");
 
 function atualizar(req, res) {
     var ponto = req.body.pontoServer;
 
-    if (ponto == undefined) {
-        res.status(400).send("idUsuario está undefined!");
-    } else {
-
         pontoModel.atualizar(ponto)
-            .then((resultadoo) => {
-                res.status(201).json(resultado);
+        .then(
+            function (resultado) {
+                res.json(resultado);
             }
-            ).catch((erro) => {
+        ).catch(
+            function (erro) {
                 console.log(erro);
                 console.log(
-                    "\nHouve um erro ao realizar a atualização de pontos! Erro: ",
+                    "\nHouve um erro ao realizar a atualização! Erro: ",
                     erro.sqlMessage
                 );
                 res.status(500).json(erro.sqlMessage);
-            });
-    }
+            }
+        );
+    
 }
 
 module.exports = {

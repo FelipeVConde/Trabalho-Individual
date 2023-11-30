@@ -83,7 +83,6 @@ var ponto = 0
 var posicao = parseInt(Math.random() * ListaPersonagem.length)
 var icon = ListaPersonagem[posicao]
 
-b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
 function Randomizar() {
     posicao = parseInt(Math.random() * ListaPersonagem.length);
@@ -94,10 +93,12 @@ function Randomizar() {
 }
 
 function VerificarAcerto(event) {
+    validarSessao()
     var NomePersonagem = nome_personagem_input.value
     var personagem = NomePersonagem.toLowerCase();
 
     if (event.keyCode === 13) {
+        
         if (personagem == ListaPersonagem[posicao]) {
             ponto += 100
             div_pontuacao.innerHTML = `
@@ -116,6 +117,10 @@ function VerificarAcerto(event) {
                     // Agora vá para o arquivo routes/pontos.js
                     pontoServer: ponto
                 }),
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!")
+            }).catch(function (erro) {
+                console.log(erro);
             })
 
             Randomizar()

@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="icon" href="assets/imgs/Logo/Logo.jpg">
+    
 </head>
 
 <body onload="">
@@ -41,7 +42,38 @@
             </ul>
         </div>
     </div>
+    <div>
+        <button class="btBuscar">
+            <a href="RandomizadorCaracter.html">Voltar</a>
+        </button>
+    </div>
+    <div style="height: 40vh; width: 40vw;">
+        <canvas id="myChart"></canvas>
+      </div>
 
 </body>
 
 </html>
+
+<script>
+    const ctx = document.getElementById('myChart');
+  
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Gorou', 'Andarilho', 'Cyno', 'Wriothesley', 'Furina'],
+        datasets: [{
+          label: 'Quantidade de usuarios',
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
