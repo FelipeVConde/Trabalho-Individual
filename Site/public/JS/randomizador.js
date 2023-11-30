@@ -106,6 +106,18 @@ function VerificarAcerto(event) {
             `
             img_paimon.src = 'assets/imgs/Background/acerto.webp'
 
+            fetch("/ponto/atualizar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/pontos.js
+                    pontoServer: ponto
+                }),
+            })
+
             Randomizar()
 
             setTimeout(function(){

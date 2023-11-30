@@ -32,6 +32,7 @@ CREATE TABLE usuario(
     nome VARCHAR(45),
     email VARCHAR(45),
     senha VARCHAR(45),
+    pontos INT not null,
 	fkPersonagem INT,
 	constraint fkPersonagem foreign key (fkPersonagem)
     references personagem(idPersonagem)
