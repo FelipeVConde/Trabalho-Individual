@@ -35,6 +35,8 @@ function PegarDadosPraDashBoard() {
     return database.executar(instrucao);
 }
 
+function 
+
 module.exports = {
     autenticar,
     cadastrar,
