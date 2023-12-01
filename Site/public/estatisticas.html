@@ -11,10 +11,10 @@
 
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="icon" href="assets/imgs/Logo/Logo.jpg">
-    
+
 </head>
 
-<body onload="">
+<body onload="obterDadosGrafico()">
 
     <div class="header">
         <div class="container">
@@ -48,32 +48,80 @@
         </button>
     </div>
     <div style="height: 40vh; width: 40vw;">
-        <canvas id="myChart"></canvas>
-      </div>
+        <canvas id="myChart1"></canvas>
+    </div>
+    <div style="height: 40vh; width: 40vw;">
+        <canvas id="myChart2"></canvas>
+    </div>
 
 </body>
 
 </html>
 
 <script>
-    const ctx = document.getElementById('myChart');
-  
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Gorou', 'Andarilho', 'Cyno', 'Wriothesley', 'Furina'],
-        datasets: [{
-          label: 'Quantidade de usuarios',
-          data: [12, 19, 3, 5, 2, 3],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
+    function obterDadosGrafico() {
+
+        fetch(`/usuarios/PegarDadosPraDashBoard`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (informacao) {
+                    console.log(`Dados recebidos: ${JSON.stringify(informacao)}`);
+                    informacao.reverse();
+
+                    plotarGrafico(informacao);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function plotarGrafico(informacao) {
+        let labels = [];
+
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Quantidade de usuarios',
+                data: [],
+                borderWidth: 1
+            }]
+        };
+
+        for (i = 0; i < informacao.length; i += 1) {
+            var registro = informacao[i];
+            labels.push(registro.nome);
+            dados.datasets[0].data.push(registro.quantidade_usuarios)
         }
-      }
+
+        const config = {
+            type: 'bar',
+            data: dados,
+        };
+
+        let myChart = new Chart(document.getElementById(`myChart2`), config);
+    }
+
+    const ctx = document.getElementById('myChart1');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Gorou', 'Andarilho', 'Cyno', 'Wriothesley', 'Furina'],
+            datasets: [{
+                label: 'Quantidade de usuarios',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
     });
-  </script>
+</script>

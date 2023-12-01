@@ -8,6 +8,24 @@ body {
     padding: 1%;
 }
 
+.btcomum {
+    width: 220px;
+    padding: 16px 0px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-weight: 800;
+    color: #debc60;
+    background: #1b1d2a;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #393b40;
+}
+
+.btcomum a {
+    text-decoration: none;
+    color: #debc60;
+}
+
 .container1  {
     padding-left: 40%;
     padding-top: 7%;

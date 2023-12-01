@@ -267,14 +267,8 @@ INSERT INTO usuario VALUES
 (null, 'Renan', 'renan@gmail.com', '12345678', '0', '40'),
 (null, 'Aline', 'aline@gmail.com', '12345678', '0', '44'),
 (null, 'Gustavo', 'gustavo@gmail.com', '12345678', '0', '42'),
-(null, 'Fernanda', 'fernanda@gmail.com', '12345678', '0', '43'),
-(null, 'Henrique', 'henrique@gmail.com', '12345678', '0', '41'),
 (null, 'Raquel', 'raquel@gmail.com', '12345678', '0', '40'),
 (null, 'Diego', 'diego@gmail.com', '12345678', '0', '46'),
-(null, 'Mariana', 'mariana@gmail.com', '12345678', '0', '44'),
-(null, 'Rodrigo', 'rodrigo@gmail.com', '12345678', '0', '45'),
-(null, 'Camila', 'camila@gmail.com', '12345678', '0', '42'),
-(null, 'Felipe', 'felipe@gmail.com', '12345678', '0', '40'),
 (null, 'Ana Clara', 'anaclara@gmail.com', '12345678', '0', '43'),
 (null, 'Ricardo', 'ricardo@gmail.com', '12345678', '0', '41');
 

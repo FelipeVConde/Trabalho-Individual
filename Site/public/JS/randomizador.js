@@ -139,6 +139,21 @@ function VerificarAcerto(event) {
                     usuario: <span id="b_usuario"></span><br><br>
                     Pontos: ${ponto}
                 `
+                fetch("/ponto/atualizar", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        // crie um atributo que recebe o valor recuperado aqui
+                        // Agora vá para o arquivo routes/pontos.js
+                        pontoServer: ponto
+                    }),
+                }).then(function (resposta) {
+                    console.log("ESTOU NO THEN DO entrar()!")
+                }).catch(function (erro) {
+                    console.log(erro);
+                })
             }
         }
     }

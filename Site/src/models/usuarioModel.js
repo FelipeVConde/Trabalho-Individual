@@ -22,7 +22,21 @@ function cadastrar(nome, email, senha, pontos, fkPersonagem) {
     return database.executar(instrucao);
 }
 
+function PegarDadosPraDashBoard() {
+    var instrucao = `
+    SELECT personagem.nome, COUNT(*) as quantidade_usuarios
+    FROM usuario
+        join personagem on fkPersonagem = idPersonagem
+    GROUP BY fkPersonagem
+    ORDER BY quantidade_usuarios DESC
+    LIMIT 5;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     autenticar,
     cadastrar,
+    PegarDadosPraDashBoard,
 };

@@ -12,4 +12,8 @@ router.post("/autenticar", function (req, res) {
     usuarioControle.autenticar(req, res);
 });
 
+router.get("/PegarDadosPraDashBoard", function (req, res){
+    usuarioControle.PegarDadosPraDashBoard(req, res);
+});
+
 module.exports = router;
