@@ -12,7 +12,7 @@ function autenticar(email, senha) {
 // Coloque os mesmos parâmetros aqui. Vá para a var instrucao
 function cadastrar(nome, email, senha, pontos, fkPersonagem) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, senha, pontos, fkPersonagem);
-    
+
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
@@ -22,7 +22,7 @@ function cadastrar(nome, email, senha, pontos, fkPersonagem) {
     return database.executar(instrucao);
 }
 
-function PegarDadosPraDashBoard() {
+function PegarCincoPersonagens() {
     var instrucao = `
     SELECT personagem.nome, COUNT(*) as quantidade_usuarios
     FROM usuario
@@ -35,10 +35,52 @@ function PegarDadosPraDashBoard() {
     return database.executar(instrucao);
 }
 
-function 
+function PegarCincoUsuarios() {
+    var instrucao = `
+    SELECT nome, pontos FROM usuario ORDER BY pontos DESC LIMIT 5;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function PegarTopPersonagem() {
+    var instrucao = `
+    SELECT personagem.nome, COUNT(*) as quantidade_usuarios
+    FROM usuario
+	    join personagem on fkPersonagem = idPersonagem
+    GROUP BY fkPersonagem
+    ORDER BY quantidade_usuarios DESC
+    LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function PegarTopUsuario() {
+    var instrucao = `
+    SELECT nome, pontos
+    FROM usuario
+    WHERE pontos = (SELECT MAX(pontos) FROM usuario);
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+
+function PegarPontosDoUsuario() {
+    var instrucao = `
+        SELECT pontos FROM usuario WHERE nome = '${nome}';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
 
 module.exports = {
     autenticar,
     cadastrar,
-    PegarDadosPraDashBoard,
+    PegarCincoPersonagens,
+    PegarCincoUsuarios,
+    PegarTopPersonagem,
+    PegarTopUsuario,
+    PegarPontosDoUsuario,
 };

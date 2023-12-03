@@ -1,5 +1,5 @@
 .btcomum {
-    width: 150px;
+    width: 125px;
     padding: 16px 0px;
     border: none;
     border-radius: 8px;
@@ -18,10 +18,22 @@
 
 .div_kpi {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+#div_top1_usuario {
+    border: solid black 5px;
+    padding: 5px;
+}
+
+#div_top1_personagem {
+    border: solid black 5px;
+    padding: 5px;
 }
 
 .div_dashboard {
+    border: solid black 5 px;
+    padding: 5px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }

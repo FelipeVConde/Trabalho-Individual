@@ -54,7 +54,7 @@ function cadastrar(req, res) {
         res.status(400).send("Sua senha está undefined!");
     } else if (fkPersonagem == undefined) {
         res.status(400).send("Seu personagm esta undefined!");
-    }else {
+    } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         usuarioModel.cadastrar(nome, email, senha, pontos, fkPersonagem)
@@ -75,25 +75,104 @@ function cadastrar(req, res) {
     }
 }
 
-function PegarDadosPraDashBoard(req, res){
-    usuarioModel.PegarDadosPraDashBoard().then(function (resultado) {
-        if(resultado.length > 0){
+function PegarCincoPersonagens(req, res) {
+    usuarioModel.PegarCincoPersonagens().then(function (resultado) {
+        if (resultado.length > 0) {
             res.status(200).json(resultado);
-        }else{
+        } else {
             res.status(204).send("Não há resultados");
         }
     }).catch(function (erro) {
         console.log(erro);
         console.log(
-          "Houve um erro ao buscar as ultimas medidas.",
-          erro.sqlMessage
+            "Houve um erro ao buscar as ultimos dados.",
+            erro.sqlMessage
         );
         res.status(500).json(erro.sqlMessage);
-      });  
+    });
+}
+
+function PegarCincoUsuarios(req, res) {
+    usuarioModel.PegarCincoUsuarios().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Não há resultados");
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log(
+            "Houve um erro ao buscar as ultimos dados.",
+            erro.sqlMessage
+        );
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function PegarTopPersonagem(req, res) {
+    usuarioModel.PegarTopPersonagem().then(function (resultado) {
+        if(resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("não há resultados");
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log(
+            "Houve um erro ao buscar as ultimos dados.",
+            erro.sqlMessage
+        );
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function PegarTopUsuario(req, res) {
+    usuarioModel.PegarTopUsuario().then(function (resultado) {
+        if(resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("não há resultados");
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log(
+            "Houve um erro ao buscar as ultimos dados.",
+            erro.sqlMessage
+        );
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function PegarPontosDoUsuario(req, res) {
+    var nome = req.body.nomeServer
+
+    if (nome == undefined) {
+        res.status(400).send("Seu nome está undefined!");
+    } else {
+        usuarioModel.PegarPontosDoUsuario().then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Não há resultados");
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+            console.log(
+                "Houve um erro ao buscar pontos do usuario",
+                erro.sqlMessage
+            );
+            res.status(500).json(erro.sqlMessage);
+        });
+    }
+
 }
 
 module.exports = {
     autenticar,
     cadastrar,
-    PegarDadosPraDashBoard,
+    PegarCincoPersonagens,
+    PegarCincoUsuarios,
+    PegarTopPersonagem,
+    PegarTopUsuario,
+    PegarPontosDoUsuario,
 };

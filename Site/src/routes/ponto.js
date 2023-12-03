@@ -5,7 +5,7 @@ var pontoControle = require("../controllers/pontoController");
 
 //Recebendo os dados do html e direcionando para a função cadastrar de pontosController.js
 
-router.post("/atualizar", function (req, res){
+router.put("/atualizar", function (req, res){
     pontoControle.atualizar(req, res);
 })
 

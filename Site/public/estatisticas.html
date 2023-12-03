@@ -25,7 +25,7 @@
                     <li>
                         <a href="index.html">Início</a>
                     </li>
-                    <li >
+                    <li>
                         <a href="#">Personagens</a>
                     </li>
                     <li class="agora">
@@ -45,22 +45,18 @@
     </div><br>
     <div>
         <button class="btcomum">
-            <a href="RandomizadorCaracter.html">Voltar</a>
+            <a href="RandomizadorCaracter.html">< Voltar</a>
         </button>
     </div>
-
-    <div class="div_kpi">
-        <div>
-           <h1>
-
-           </h1> 
+    
+    <div class="div_kpi" style="padding-left: 15px; padding-right: 15px;">
+        <div id="div_top1_usuario">
+           
         </div>
-        <div>
-            <h1>
-
-            </h1>
+        <div id="div_top1_personagem">
+        
         </div>
-    </div>
+    </div><br>
 
     <div class="div_dashboard">
         <div style="height: 40vh; width: 40vw;">
@@ -79,13 +75,61 @@
 <script>
     function obterDadosGrafico() {
 
-        fetch(`/usuarios/PegarDadosPraDashBoard`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/usuarios/PegarCincoPersonagens`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (informacao) {
                     console.log(`Dados recebidos: ${JSON.stringify(informacao)}`);
                     informacao.reverse();
 
-                    plotarGrafico(informacao);
+                    plotarGraficoPersongens(informacao);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+        fetch(`/usuarios/PegarCincoUsuarios`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGraficoUsuarios(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+        fetch(`/usuarios/PegarTopPersonagem`).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (dado) {
+                    console.log(`Dados recebidos: ${JSON.stringify(dado)}`);
+                    dado.reverse();
+
+                    PlotarInformacaoTopPersonagem(dado);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+        fetch(`/usuarios/PegarTopUsuario`).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (usuario) {
+                    console.log(`Dados recebidos: ${JSON.stringify(usuario)}`);
+                    usuario.reverse();
+
+                    PlotarInformacaoTopUsuario(usuario);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -96,7 +140,7 @@
             });
     }
 
-    function plotarGrafico(informacao) {
+    function plotarGraficoPersongens(informacao) {
         let labels = [];
 
         let dados = {
@@ -117,29 +161,122 @@
         const config = {
             type: 'bar',
             data: dados,
+            options: {
+                plugins: {
+                    title: {
+                        align: 'center',
+                        display: true,
+                        text: 'Top 5 personagens mais selecionados na tela cadastro'
+                    }
+                }
+            }
+            
         };
 
         let myChart = new Chart(document.getElementById(`myChart2`), config);
     }
 
-    const ctx = document.getElementById('myChart1');
+    function plotarGraficoUsuarios(resposta) {
+        let labels = [];
 
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Gorou', 'Andarilho', 'Cyno', 'Wriothesley', 'Furina'],
+        let dados = {
+            labels: labels,
             datasets: [{
-                label: 'Quantidade de usuarios',
-                data: [12, 19, 3, 5, 2, 3],
-                borderWidth: 1
+                label: 'Quantidade de pontos',
+                data: [],
+                borderWidth: 1,
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(75, 192, 192)',
+                    'rgb(255, 205, 86)',
+                    'rgb(201, 203, 207)',
+                    'rgb(54, 162, 235)'
+                ]
             }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+        };
+
+        for (i=0; i < resposta.length; i += 1){
+            var registro = resposta[i];
+            labels.push(registro.nome);
+            dados.datasets[0].data.push(registro.pontos)
+        }
+
+        const config = {
+            type: 'bar',
+            data: dados,
+            options: {
+                plugins: {
+                    title: {
+                        align: 'center',
+                        display: true,
+                        text: 'Top 5 usuários com maior pontuação de Quiz'
+                    } 
                 }
             }
+            
+        };
+
+        let myChart = new Chart(document.getElementById(`myChart1`), config);
+    }
+
+    function PlotarInformacaoTopPersonagem(dado) {
+        let Top1Personagem = [];
+        let QtdUsuariosTop1Personagem = [];
+
+        for (i = 0; i < dado.length; i += 1){
+            var registro = dado[i];
+            Top1Personagem.push(registro.nome);
+            QtdUsuariosTop1Personagem.push(registro.quantidade_usuarios);
         }
-    });
+        div_top1_personagem.innerHTML = `
+        <h1>
+        Top #1 Personagem: ${Top1Personagem[0]}
+        </h1>
+        <div>
+            <h2>Quantidade de Usuários: ${QtdUsuariosTop1Personagem[0]}</h2>
+        </div>
+        
+        ` 
+    }
+
+    function PlotarInformacaoTopUsuario(usuario) {
+        let Top1Usuario = []
+        let PontosTop1Usuario = []
+
+        for (i = 0; i < usuario.length; i += 1){
+            var registro = usuario[i];
+            Top1Usuario.push(registro.nome);
+            PontosTop1Usuario.push(registro.pontos)
+        }
+        div_top1_usuario.innerHTML = `
+        <h1>
+        Top #1 Usuário: ${Top1Usuario[0]} 
+        </h1>
+        <div>
+            <h2>Pontos: ${PontosTop1Usuario[0]}</h2>
+        </div>
+       
+        ` 
+    }
+
+    // const ctx = document.getElementById('myChart1');
+
+    // new Chart(ctx, {
+    //     type: 'bar',
+    //     data: {
+    //         labels: ['Gorou', 'Andarilho', 'Cyno', 'Wriothesley', 'Furina'],
+    //         datasets: [{
+    //             label: 'Quantidade de usuarios',
+    //             data: [12, 19, 3, 5, 2, 3],
+    //             borderWidth: 1
+    //         }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             y: {
+    //                 beginAtZero: true
+    //             }
+    //         }
+    //     }
+    // });
 </script>
