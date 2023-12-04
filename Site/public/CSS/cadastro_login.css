@@ -103,9 +103,25 @@ a {
     color: #c79e2e;
 }
 
+.aether {
+    height: 300px;
+    position: absolute;
+    bottom: -55px;
+    z-index: 99999;
+    right: 0;
+}
+
 .zhongli {
     height: 300px;
     position: absolute;
     bottom: -55px; 
     left: 0;
+}
+
+.zhongli2 {
+    height: 300px;
+    width: 500px;
+    position: absolute;
+    bottom: -55px; 
+    right: -410px;
 }

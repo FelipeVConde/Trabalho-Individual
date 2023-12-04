@@ -38,10 +38,3 @@ body {
     font-size: larger;
   }
 
-.banner {
-    height: fit-content;
-    padding: 40px 0;
-    background-image: url(".././assets/imgs/Background/banner.jpg");
-    background-size: cover;
-    height: 500px;
-}

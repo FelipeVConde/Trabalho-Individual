@@ -144,17 +144,14 @@ function PegarTopUsuario(req, res) {
 }
 
 function PegarPontosDoUsuario(req, res) {
-    var nome = req.body.nomeServer
+    var nome = req.body.nome;
 
-    if (nome == undefined) {
-        res.status(400).send("Seu nome está undefined!");
-    } else {
-        usuarioModel.PegarPontosDoUsuario().then(function (resultado) {
-            if (resultado.length > 0) {
-                res.status(200).json(resultado);
-            } else {
-                res.status(204).send("Não há resultados");
-            }
+        usuarioModel.PegarPontosDoUsuario(nome).then(function (resultado) {
+            console.log(`\nResultados encontrados: ${resultado.length}`);
+        console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+            res.json({
+                pontosUsuario: resultado[0].pontos
+            })
         }).catch(function (erro) {
             console.log(erro);
             console.log(
@@ -163,8 +160,57 @@ function PegarPontosDoUsuario(req, res) {
             );
             res.status(500).json(erro.sqlMessage);
         });
-    }
 
+}
+
+// function PegarPontosDoUsuario(req, res) {
+//     var nome = req.nomeServer
+
+//     if (nome == undefined) {
+//         res.status(400).send("Seu nome está undefined!");
+//     } else {
+//         usuarioModel.PegarPontosDoUsuario().then(function (resultado) {
+//             if (resultado.length > 0) {
+//                 res.status(200).json(resultado);
+//             } else {
+//                 res.status(204).send("Não há resultados");
+//             }
+//         }).catch(function (erro) {
+//             console.log(erro);
+//             console.log(
+//                 "Houve um erro ao buscar pontos do usuario",
+//                 erro.sqlMessage
+//             );
+//             res.status(500).json(erro.sqlMessage);
+//         });
+//     }
+
+// }
+
+function atualizar(req, res) {
+    var pontos = req.body.pontoServer;
+    var nome = req.body.nomeServer;
+
+    if(nome == undefined){
+        res.status(400).send("Seu nome está undefined!");
+    }else{
+        usuarioModel.atualizar(pontos, nome)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar a atualização! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+    }       
+    
 }
 
 module.exports = {
@@ -175,4 +221,5 @@ module.exports = {
     PegarTopPersonagem,
     PegarTopUsuario,
     PegarPontosDoUsuario,
+    atualizar,
 };

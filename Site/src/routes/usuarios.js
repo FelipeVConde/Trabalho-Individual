@@ -28,9 +28,13 @@ router.get("/PegarTopUsuario", function (req, res){
     usuarioControle.PegarTopUsuario(req, res);
 });
 
-router.get("/PegarPontosDoUsuario", function (req, res){
+router.post("/PegarPontosDoUsuario", function (req, res){
     usuarioControle.PegarPontosDoUsuario(req, res);
 });
+
+router.put("/atualizar", function (req, res){
+    usuarioControle.atualizar(req, res);
+})
 
 
 module.exports = router;

@@ -83,22 +83,31 @@ var ponto = 0
 var posicao = parseInt(Math.random() * ListaPersonagem.length)
 var icon = ListaPersonagem[posicao]
 
-function PegarPontosDoUsuario() {
-    fetch("/ponto/PegarPontosDoUsuario", {
-        method: "GET",
+function PegarPontos() {
+    var nome = sessionStorage.NOME_USUARIO;
+
+    usuario.innerHTML = nome;
+
+    fetch(`/usuario/PegarPontosDoUsuario`, {
+        method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            nomeServer: nome
-        }),
-    }).then(function (resposta){
-        if (resposta.ok) {
-            resposta.json().then(function (informacao) {
-                console.log(`Dados recebidos: ${JSON.stringify(informacao)}`);
-                informacao.reverse();
+            nome: nome
+        })
+    })
+        .then(function (resposta){
+            console.log(resposta);
 
-                ponto = informacao;
+            if (resposta.ok) {            
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                pontos.innerHTML = json.pontosUsuario
+                
+                // plotarPontoUsuario();
             });
         } else {
             console.error('Nenhum dado encontrado ou erro na API');
@@ -108,35 +117,56 @@ function PegarPontosDoUsuario() {
     })
 }
 
+function plotarPontoUsuario(){
+    // let PontoUsuario = [];
+
+    // for (i = 0; i < informacao.length; i += 1){
+    //     var registro = informacao[i];
+    //     PontoUsuario.push(registro.pontos);
+    // }
+
+    // ponto = PontoUsuario[0]
+
+    // div_pontuacao.innerHTML = `
+    //     usuario: <span id="b_usuario">${sessionStorage.NOME_USUARIO}</span><br><br>
+    //     Pontos: ${ponto}
+    //     `
+}
+
 function Randomizar() {
-    validarSessao()
-    div_pontuacao.innerHTML = `
-        usuario: <span id="b_usuario"></span><br><br>
-        Pontos: ${ponto}
-        `
+    
     posicao = parseInt(Math.random() * ListaPersonagem.length);
     icon = ListaPersonagem[posicao];
     div_caracter_icon.innerHTML = `<img src="assets/imgs/iconCaracter/${icon}.webp" alt="${ListaPersonagem[posicao]}" height="115px">
     `
     nome_personagem_input.value = ""
+
+    pontos.innerHTML = ponto
+    usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    // div_pontuacao.innerHTML = `
+    //     usuario: <span id="b_usuario">${sessionStorage.NOME_USUARIO}</span><br><br>
+    //     Pontos: ${ponto}
+    //     `
 }
 
 function VerificarAcerto(event) {
 
     var NomePersonagem = nome_personagem_input.value
     var personagem = NomePersonagem.toLowerCase();
+    var nome = sessionStorage.NOME_USUARIO
 
     if (event.keyCode === 13) {
 
         if (personagem == ListaPersonagem[posicao]) {
             ponto += 100
-            div_pontuacao.innerHTML = `
-            usuario: <span id="b_usuario"></span><br><br>
-            Pontos: ${ponto}
-            `
+            // div_pontuacao.innerHTML = `
+            // usuario: <span id="b_usuario"></span><br><br>
+            // Pontos: ${ponto}
+            // `
             img_paimon.src = 'assets/imgs/Background/acerto.webp'
 
-            fetch("/ponto/atualizar", {
+            fetch("/usuario/atualizar", {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -144,7 +174,8 @@ function VerificarAcerto(event) {
                 body: JSON.stringify({
                     // crie um atributo que recebe o valor recuperado aqui
                     // Agora vá para o arquivo routes/pontos.js
-                    pontoServer: ponto
+                    pontoServer: ponto,
+                    nomeServer: nome
                 }),
             }).then(function (resposta) {
                 console.log("ESTOU NO THEN DO entrar()!")
@@ -164,11 +195,13 @@ function VerificarAcerto(event) {
             }, 3000);
             if (ponto >= 50) {
                 ponto -= 50
-                div_pontuacao.innerHTML = `
-                    usuario: <span id="b_usuario"></span><br><br>
-                    Pontos: ${ponto}
-                `
-                fetch("/ponto/atualizar", {
+
+                pontos.innerHTML = ponto
+                // div_pontuacao.innerHTML = `
+                //     usuario: <span id="b_usuario"></span><br><br>
+                //     Pontos: ${ponto}
+                // `
+                fetch("/usuario/atualizar", {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",
@@ -176,7 +209,8 @@ function VerificarAcerto(event) {
                     body: JSON.stringify({
                         // crie um atributo que recebe o valor recuperado aqui
                         // Agora vá para o arquivo routes/pontos.js
-                        pontoServer: ponto
+                        pontoServer: ponto,
+                        nomeServer: nome
                     }),
                 }).then(function (resposta) {
                     console.log("ESTOU NO THEN DO entrar()!")

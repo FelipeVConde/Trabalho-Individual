@@ -67,12 +67,19 @@ function PegarTopUsuario() {
 }
 
 
-function PegarPontosDoUsuario() {
+function PegarPontosDoUsuario(nome) {
     var instrucao = `
         SELECT pontos FROM usuario WHERE nome = '${nome}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
+}
+
+function atualizar(pontos, nome) {
+    instrucaoSql = `UPDATE usuario SET pontos = ${pontos} WHERE usuario.nome = '${nome}';`
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
 }
 
 module.exports = {
@@ -83,4 +90,5 @@ module.exports = {
     PegarTopPersonagem,
     PegarTopUsuario,
     PegarPontosDoUsuario,
+    atualizar,
 };
