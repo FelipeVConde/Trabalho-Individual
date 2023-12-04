@@ -79,15 +79,18 @@ ListaPersonagem = [
     'zhongli'
 ]
 
+var nome = sessionStorage.NOME_USUARIO;
 var ponto = 0
 var posicao = parseInt(Math.random() * ListaPersonagem.length)
 var icon = ListaPersonagem[posicao]
 
+div_pontuacao.innerHTML = `
+    usuario: <span id="usuario_span">${nome}</span><br><br>
+    Pontos: <span id="pontos_span">${ponto}</span>
+    `
+
 function PegarPontos() {
-    var nome = sessionStorage.NOME_USUARIO;
-
-    usuario.innerHTML = nome;
-
+    
     fetch(`/usuario/PegarPontosDoUsuario`, {
         method: "POST",
         headers: {
@@ -105,7 +108,7 @@ function PegarPontos() {
                     console.log(json);
                     console.log(JSON.stringify(json));
 
-                pontos.innerHTML = json.pontosUsuario
+                pontos_span.innerHTML = `${json.pontosUsuario}`
                 
                 // plotarPontoUsuario();
             });
@@ -116,6 +119,7 @@ function PegarPontos() {
         console.log(erro);
     })
 }
+PegarPontos()
 
 function plotarPontoUsuario(){
     // let PontoUsuario = [];
@@ -141,8 +145,8 @@ function Randomizar() {
     `
     nome_personagem_input.value = ""
 
-    pontos.innerHTML = ponto
-    usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    pontos_span.innerHTML = ponto
+    usuario_span.innerHTML = sessionStorage.NOME_USUARIO;
 
     // div_pontuacao.innerHTML = `
     //     usuario: <span id="b_usuario">${sessionStorage.NOME_USUARIO}</span><br><br>
@@ -196,7 +200,7 @@ function VerificarAcerto(event) {
             if (ponto >= 50) {
                 ponto -= 50
 
-                pontos.innerHTML = ponto
+                pontos_span.innerHTML = ponto
                 // div_pontuacao.innerHTML = `
                 //     usuario: <span id="b_usuario"></span><br><br>
                 //     Pontos: ${ponto}

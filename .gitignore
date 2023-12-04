@@ -3,5 +3,6 @@ node_modules
 package-lock.json
 videos
 settings.json
+config.js
 
 .github
