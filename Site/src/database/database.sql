@@ -205,35 +205,7 @@ INSERT INTO personagem(nome, visão, nação, raridade, fkArma, fkEspecialidade)
     ('Yun Jin', 'geo', 'Liyue', 4, 3, 44),
     ('Zhongli', null, 'Liyue', 5, 3, 24);
 
--- SELECTS
-SELECT * FROM usuario;
-
-SELECT  * FROM arma;
-
-SELECT * FROM especialidade;
-
-SELECT * FROM personagem;
-
-describe usuario;
-describe arma;
-describe especialidade;
-describe personagem;
-
--- Trazer lista de dados do personagem e seu tipo de arma.
-SELECT personagem.nome, personagem.visão, personagem.nação, personagem.raridade, arma.tipo as 'tipo de arma' FROM arma
-	JOIN personagem ON fkArma = idArma;
-
--- Trazer lista de dados do usuario que tem certo de personagem.
-SELECT usuario.*, personagem.* FROM usuario
-    JOIN personagem
-        ON idPersonagem = fkPersonagem
-WHERE personagem.nome ='Gorou';
-
-SELECT usuario.nome, personagem.nome, 
-
-TRUNCATE usuario;
-
-INSERT INTO usuario VALUES
+    INSERT INTO usuario VALUES
 	(null, 'Antonio', 'antonio@gmail.com', '12345678', '0', '21'),
     (null, 'Maria', 'maria@gmail.com', '12345678', '0', '42'),
 	(null, 'João', 'joao@gmail.com', '12345678', '0', '15'),
@@ -254,27 +226,84 @@ INSERT INTO usuario VALUES
 	(null, 'Amanda', 'amanda@gmail.com', '12345678', '0', '21'),
 	(null, 'Felipe', 'felipe@gmail.com', '12345678', '0', '36'),
 	(null, 'Beatriz', 'beatriz@gmail.com', '12345678', '0', '67'),
-	(null, 'Guilherme', 'guilherme@gmail.com', '12345678', '0', '3');
-    
-INSERT INTO usuario VALUES
-	(null, 'Laura', 'laura@gmail.com', '12345678', '0', '45'),
-(null, 'Tiago', 'tiago@gmail.com', '12345678', '0', '42'),
-(null, 'Carla', 'carla@gmail.com', '12345678', '0', '40'),
-(null, 'Vinícius', 'vinicius@gmail.com', '12345678', '0', '44'),
-(null, 'Julia', 'julia@gmail.com', '12345678', '0', '43'),
-(null, 'Luciano', 'luciano@gmail.com', '12345678', '0', '41'),
-(null, 'Isadora', 'isadora@gmail.com', '12345678', '0', '46'),
-(null, 'Renan', 'renan@gmail.com', '12345678', '0', '40'),
-(null, 'Aline', 'aline@gmail.com', '12345678', '0', '44'),
-(null, 'Gustavo', 'gustavo@gmail.com', '12345678', '0', '42'),
-(null, 'Raquel', 'raquel@gmail.com', '12345678', '0', '40'),
-(null, 'Diego', 'diego@gmail.com', '12345678', '0', '46'),
-(null, 'Ana Clara', 'anaclara@gmail.com', '12345678', '0', '43'),
-(null, 'Ricardo', 'ricardo@gmail.com', '12345678', '0', '41');
+	(null, 'Guilherme', 'guilherme@gmail.com', '12345678', '0', '3'),
+    (null, 'Laura', 'laura@gmail.com', '12345678', '0', '45'),
+    (null, 'Tiago', 'tiago@gmail.com', '12345678', '0', '42'),
+    (null, 'Carla', 'carla@gmail.com', '12345678', '0', '40'),
+    (null, 'Vinícius', 'vinicius@gmail.com', '12345678', '0', '44'),
+    (null, 'Julia', 'julia@gmail.com', '12345678', '0', '43'),
+    (null, 'Luciano', 'luciano@gmail.com', '12345678', '0', '41'),
+    (null, 'Isadora', 'isadora@gmail.com', '12345678', '0', '46'),
+    (null, 'Renan', 'renan@gmail.com', '12345678', '0', '40'),
+    (null, 'Aline', 'aline@gmail.com', '12345678', '0', '44'),
+    (null, 'Gustavo', 'gustavo@gmail.com', '12345678', '0', '42'),
+    (null, 'Raquel', 'raquel@gmail.com', '12345678', '0', '40'),
+    (null, 'Diego', 'diego@gmail.com', '12345678', '0', '46'),
+    (null, 'Ana Clara', 'anaclara@gmail.com', '12345678', '0', '43'),
+    (null, 'Ricardo', 'ricardo@gmail.com', '12345678', '0', '41'),
+    (null, 'Renata', 'renata@gmail.com', '12345678', '0', '69'),
+    (null, 'Marcos', 'marcos@gmail.com', '12345678', '0', '69'),
+    (null, 'Isabella', 'isabella@gmail.com', '12345678', '0', '69'),
+    (null, 'Feliciano', 'feliciano@gmail.com', '12345678', '0', '69'),
+    (null, 'Viviane', 'viviane@gmail.com', '12345678', '0', '69'),
+    (null, 'Erick', 'erick@gmail.com', '12345678', '0', '69'),
+    (null, 'Luana', 'luana@gmail.com', '12345678', '0', '69'),
+    (null, 'Ronaldo', 'ronaldo@gmail.com', '12345678', '0', '69');
 
-SELECT personagem.nome, fkPersonagem, COUNT(*) as quantidade_usuarios
+    UPDATE usuario SET pontos = 400 WHERE idUsuario = '2';
+    UPDATE usuario SET pontos = 700 WHERE idUsuario = '3';
+    UPDATE usuario SET pontos = 50 WHERE idUsuario = '4';
+    UPDATE usuario SET pontos = 1000 WHERE idUsuario = '5';
+
+    TRUNCATE usuario;
+
+-- SELECTS
+SELECT * FROM usuario;
+
+SELECT  * FROM arma;
+
+SELECT * FROM especialidade;
+
+SELECT * FROM personagem;
+
+describe usuario;
+describe arma;
+describe especialidade;
+describe personagem;
+
+-- Personagem mais selecionado na tela cadastro
+SELECT personagem.nome, COUNT(*) as quantidade_usuarios
+FROM usuario
+	join personagem on fkPersonagem = idPersonagem
+GROUP BY fkPersonagem
+ORDER BY quantidade_usuarios DESC
+LIMIT 1;
+
+-- 5 personagens mais selecionados na tela cadastro
+SELECT personagem.nome, COUNT(*) as quantidade_usuarios
 FROM usuario
 	join personagem on fkPersonagem = idPersonagem
 GROUP BY fkPersonagem
 ORDER BY quantidade_usuarios DESC
 LIMIT 5;
+
+-- USUARIO COM MAIOR PONTUAÇÃO
+SELECT nome, pontos
+FROM usuario
+WHERE pontos = (SELECT MAX(pontos) FROM usuario);
+
+-- 5 usuarios com maior pontuação
+SELECT nome, pontos
+FROM usuario
+ORDER BY pontos DESC
+LIMIT 5;
+
+-- Trazer lista de dados do personagem e seu tipo de arma.
+SELECT personagem.nome, personagem.visão, personagem.nação, personagem.raridade, arma.tipo as 'tipo de arma' FROM arma
+	JOIN personagem ON fkArma = idArma;
+
+-- Trazer lista de dados do usuario que tem certo de personagem.
+SELECT usuario.*, personagem.* FROM usuario
+    JOIN personagem
+        ON idPersonagem = fkPersonagem
+WHERE personagem.nome ='Gorou';
