@@ -88,7 +88,7 @@ var icon = ListaPersonagem[posicao]
 
 function PegarPontos() {
 
-    fetch(`/usuario/PegarPontosDoUsuario`, {
+    fetch(`/usuarios/PegarPontosDoUsuario`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -119,7 +119,7 @@ function PegarPontos() {
 }
 
 
-function plotarPontos() {
+function plotarPontos(informacao) {
     let PontoUsuario = [];
 
     for (i = 0; i < informacao.length; i += 1) {
@@ -129,10 +129,9 @@ function plotarPontos() {
 
     ponto = PontoUsuario[0]
 
-    div_pontuacao.innerHTML = `
-    usuario: <span id="usuario_span">${nomeUsuario}</span><br><br>
-    Pontos: <span id="pontos_span">${ponto}</span>
-    `
+    usuario_span.innerHTML = `${nomeUsuario}`
+    pontos_span.innerHTML = `${ponto}`
+
 }
 
 function Randomizar() {
@@ -144,11 +143,6 @@ function Randomizar() {
     nome_personagem_input.value = ""
 
     usuario_span.innerHTML = sessionStorage.NOME_USUARIO;
-
-    // div_pontuacao.innerHTML = `
-    //     usuario: <span id="b_usuario">${sessionStorage.NOME_USUARIO}</span><br><br>
-    //     Pontos: ${ponto}
-    //     `
 }
 
 function VerificarAcerto(event) {
@@ -167,7 +161,7 @@ function VerificarAcerto(event) {
             `
             img_paimon.src = 'assets/imgs/Background/acerto.webp'
 
-            fetch("/usuario/atualizar", {
+            fetch("/usuarios/atualizar", {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -202,7 +196,7 @@ function VerificarAcerto(event) {
                 //     usuario: <span id="b_usuario"></span><br><br>
                 //     Pontos: ${ponto}
                 // `
-                fetch("/usuario/atualizar", {
+                fetch("/usuarios/atualizar", {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",

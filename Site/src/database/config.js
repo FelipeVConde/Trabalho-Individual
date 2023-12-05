@@ -5,7 +5,7 @@ var mySqlConfig = {
     host: "localhost",
     database: "Genshin",
     user: "root",
-    password: "1234",
+    password: "Rosapink1808#",
 };
 
 function executar(instrucao) {
