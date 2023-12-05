@@ -98,31 +98,31 @@ function PegarPontos() {
         })
     }).then(function (response) {
         if (response.ok) {
-          response.json().then(function (informacao) {
-            console.log(`Dados recebidos: ${JSON.stringify(informacao)}`);
-            informacao.reverse();
+            response.json().then(function (informacao) {
+                console.log(`Dados recebidos: ${JSON.stringify(informacao)}`);
+                informacao.reverse();
 
-            plotarPontos(informacao);
-          });
+                plotarPontos(informacao);
+            });
         } else {
-          console.error('Nenhum dado encontrado ou erro na API');
+            console.error('Nenhum dado encontrado ou erro na API');
         }
-      })
+    })
         .catch(function (error) {
-          console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
         });
-        
+
     div_pontuacao.innerHTML = `
     usuario: <span id="usuario_span">${nomeUsuario}</span><br><br>
-    Pontos: <span id="pontos_span"></span>
+    Pontos: <span id="pontos_span">${ponto}</span>
     `
 }
 
 
-function plotarPontos(){
+function plotarPontos() {
     let PontoUsuario = [];
 
-    for (i = 0; i < informacao.length; i += 1){
+    for (i = 0; i < informacao.length; i += 1) {
         var registro = informacao[i];
         PontoUsuario.push(registro.pontos);
     }
@@ -131,12 +131,12 @@ function plotarPontos(){
 
     div_pontuacao.innerHTML = `
     usuario: <span id="usuario_span">${nomeUsuario}</span><br><br>
-    Pontos: <span id="pontos_span">${PontoUsuario[0]}</span>
+    Pontos: <span id="pontos_span">${ponto}</span>
     `
 }
 
 function Randomizar() {
-    
+
     posicao = parseInt(Math.random() * ListaPersonagem.length);
     icon = ListaPersonagem[posicao];
     div_caracter_icon.innerHTML = `<img src="assets/imgs/iconCaracter/${icon}.webp" alt="${ListaPersonagem[posicao]}" height="115px">
@@ -161,10 +161,10 @@ function VerificarAcerto(event) {
 
         if (personagem == ListaPersonagem[posicao]) {
             ponto += 100
-            // div_pontuacao.innerHTML = `
-            // usuario: <span id="b_usuario"></span><br><br>
-            // Pontos: ${ponto}
-            // `
+            div_pontuacao.innerHTML = `
+            usuario: <span id="usuario_span">${nomeUsuario}</span><br><br>
+            Pontos: <span id="pontos_span">${ponto}</span>
+            `
             img_paimon.src = 'assets/imgs/Background/acerto.webp'
 
             fetch("/usuario/atualizar", {
