@@ -36,5 +36,9 @@ router.put("/atualizar", function (req, res){
     usuarioControle.atualizar(req, res);
 })
 
+router.post("/atributosPersonagem", function (req, res){
+    usuarioControle.atributosPersonagem(req, res);
+});
+
 
 module.exports = router;

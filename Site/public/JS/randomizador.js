@@ -79,62 +79,60 @@ ListaPersonagem = [
     'zhongli'
 ]
 
-var nome = sessionStorage.NOME_USUARIO;
+var nomeUsuario = sessionStorage.NOME_USUARIO;
 var ponto = 0
 var posicao = parseInt(Math.random() * ListaPersonagem.length)
 var icon = ListaPersonagem[posicao]
 
-div_pontuacao.innerHTML = `
-    usuario: <span id="usuario_span">${nome}</span><br><br>
-    Pontos: <span id="pontos_span">${ponto}</span>
-    `
+
 
 function PegarPontos() {
-    
+
     fetch(`/usuario/PegarPontosDoUsuario`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            nome: nome
+            nome: nomeUsuario
         })
-    })
-        .then(function (resposta){
-            console.log(resposta);
+    }).then(function (response) {
+        if (response.ok) {
+          response.json().then(function (informacao) {
+            console.log(`Dados recebidos: ${JSON.stringify(informacao)}`);
+            informacao.reverse();
 
-            if (resposta.ok) {            
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-
-                pontos_span.innerHTML = `${json.pontosUsuario}`
-                
-                // plotarPontoUsuario();
-            });
+            plotarPontos(informacao);
+          });
         } else {
-            console.error('Nenhum dado encontrado ou erro na API');
+          console.error('Nenhum dado encontrado ou erro na API');
         }
-    }).catch(function (erro){
-        console.log(erro);
-    })
+      })
+        .catch(function (error) {
+          console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+        
+    div_pontuacao.innerHTML = `
+    usuario: <span id="usuario_span">${nomeUsuario}</span><br><br>
+    Pontos: <span id="pontos_span"></span>
+    `
 }
-PegarPontos()
 
-function plotarPontoUsuario(){
-    // let PontoUsuario = [];
 
-    // for (i = 0; i < informacao.length; i += 1){
-    //     var registro = informacao[i];
-    //     PontoUsuario.push(registro.pontos);
-    // }
+function plotarPontos(){
+    let PontoUsuario = [];
 
-    // ponto = PontoUsuario[0]
+    for (i = 0; i < informacao.length; i += 1){
+        var registro = informacao[i];
+        PontoUsuario.push(registro.pontos);
+    }
 
-    // div_pontuacao.innerHTML = `
-    //     usuario: <span id="b_usuario">${sessionStorage.NOME_USUARIO}</span><br><br>
-    //     Pontos: ${ponto}
-    //     `
+    ponto = PontoUsuario[0]
+
+    div_pontuacao.innerHTML = `
+    usuario: <span id="usuario_span">${nomeUsuario}</span><br><br>
+    Pontos: <span id="pontos_span">${PontoUsuario[0]}</span>
+    `
 }
 
 function Randomizar() {
@@ -145,7 +143,6 @@ function Randomizar() {
     `
     nome_personagem_input.value = ""
 
-    pontos_span.innerHTML = ponto
     usuario_span.innerHTML = sessionStorage.NOME_USUARIO;
 
     // div_pontuacao.innerHTML = `
@@ -158,7 +155,7 @@ function VerificarAcerto(event) {
 
     var NomePersonagem = nome_personagem_input.value
     var personagem = NomePersonagem.toLowerCase();
-    var nome = sessionStorage.NOME_USUARIO
+    var nomeUsuario = sessionStorage.NOME_USUARIO
 
     if (event.keyCode === 13) {
 
@@ -179,7 +176,7 @@ function VerificarAcerto(event) {
                     // crie um atributo que recebe o valor recuperado aqui
                     // Agora vá para o arquivo routes/pontos.js
                     pontoServer: ponto,
-                    nomeServer: nome
+                    nomeServer: nomeUsuario
                 }),
             }).then(function (resposta) {
                 console.log("ESTOU NO THEN DO entrar()!")
@@ -214,7 +211,7 @@ function VerificarAcerto(event) {
                         // crie um atributo que recebe o valor recuperado aqui
                         // Agora vá para o arquivo routes/pontos.js
                         pontoServer: ponto,
-                        nomeServer: nome
+                        nomeServer: nomeUsuario
                     }),
                 }).then(function (resposta) {
                     console.log("ESTOU NO THEN DO entrar()!")

@@ -792,6 +792,31 @@ var posicao = 0
 function Anterior() {
   if (posicao > 0) {
     posicao -= 1
+
+    fetch(`/usuarios/atributosPersonagem`, { 
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+          personagem: ListaPersonagem[posicao]
+      })
+  }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (informacao) {
+          console.log(`Dados recebidos: ${JSON.stringify(informacao)}`);
+          informacao.reverse();
+
+          plotarAtributos(informacao);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+
     div_informações.innerHTML = `
       <div class="container1">
         <div class="div_icon">
@@ -799,6 +824,9 @@ function Anterior() {
         </div>
         <div class="div_contexto">
           <h1>${ListaPersonagem[posicao]}</h1>
+          <div id="div_arma"></div>
+          <div id="div_alimento"></div>
+          <div id="div_raridade"></div>
           <p>
             ${ListaDescricao[posicao]}
           </p><br>
@@ -853,6 +881,31 @@ function Anterior() {
 function Proximo() {
   if (posicao < ListaPersonagem.length - 1) {
     posicao += 1
+
+    fetch(`/usuarios/atributosPersonagem`, { 
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+          personagem: ListaPersonagem[posicao]
+      })
+  }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (informacao) {
+          console.log(`Dados recebidos: ${JSON.stringify(informacao)}`);
+          informacao.reverse();
+
+          plotarAtributos(informacao);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+
     div_informações.innerHTML = `
       <div class="container1">
         <div class="div_icon">
@@ -860,6 +913,9 @@ function Proximo() {
         </div>
         <div class="div_contexto">
           <h1>${ListaPersonagem[posicao]}</h1>
+          <div id="div_arma"></div>
+          <div id="div_alimento"></div>
+          <div id="div_raridade"></div>
           <p>
             ${ListaDescricao[posicao]}
           </p><br>
@@ -914,6 +970,30 @@ function Proximo() {
 function Buscar() {
   for (posicao = 0; posicao <= ListaPersonagem.length; posicao += 1) {
     if (select_personagem.value == ListaPersonagem[posicao]) {
+      fetch(`/usuarios/atributosPersonagem`, { 
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            personagem: ListaPersonagem[posicao]
+        })
+    }).then(function (response) {
+        if (response.ok) {
+          response.json().then(function (informacao) {
+            console.log(`Dados recebidos: ${JSON.stringify(informacao)}`);
+            informacao.reverse();
+
+            plotarAtributos(informacao);
+          });
+        } else {
+          console.error('Nenhum dado encontrado ou erro na API');
+        }
+      })
+        .catch(function (error) {
+          console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+
       div_informações.innerHTML = `
       <div class="container1">
         <div class="div_icon">
@@ -921,6 +1001,9 @@ function Buscar() {
         </div>
         <div class="div_contexto">
           <h1>${ListaPersonagem[posicao]}</h1>
+          <div id="div_arma"></div>
+          <div id="div_alimento"></div>
+          <div id="div_raridade"></div>
           <p>
             ${ListaDescricao[posicao]}
           </p><br>
@@ -969,8 +1052,25 @@ function Buscar() {
         </div>
       </div>
             `
-    break;
+      break;
     }
   }
 
+}
+
+function plotarAtributos(informacao) {
+  let arma = []
+  let alimento = []
+  let raridade = []
+
+  for (i = 0; i < informacao.length; i += 1) {
+    var registro = informacao[i];
+    arma.push(registro.tipo);
+    alimento.push(registro.alimento);
+    raridade.push(registro.raridade);
+}
+
+div_arma.innerHTML = `Tipo de arma: ${arma[0]}`;
+div_alimento.innerHTML = `Nome do seu prato favorito: ${alimento[0]}`;
+div_raridade.innerHTML = `Raridade do prato: ${raridade[0]} estrelas`;
 }

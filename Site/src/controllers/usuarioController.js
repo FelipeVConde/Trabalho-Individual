@@ -146,20 +146,20 @@ function PegarTopUsuario(req, res) {
 function PegarPontosDoUsuario(req, res) {
     var nome = req.body.nome;
 
-        usuarioModel.PegarPontosDoUsuario(nome).then(function (resultado) {
-            console.log(`\nResultados encontrados: ${resultado.length}`);
-        console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
-            res.json({
-                pontosUsuario: resultado[0].pontos
-            })
-        }).catch(function (erro) {
+    usuarioModel.PegarPontosDoUsuario(nome).then(
+        function (resultado) {
+            res.json(resultado);
+        }
+    ).catch(
+        function (erro) {
             console.log(erro);
             console.log(
-                "Houve um erro ao buscar pontos do usuario",
+                "\nHouve um erro ao realizar a atualização! Erro: ",
                 erro.sqlMessage
             );
             res.status(500).json(erro.sqlMessage);
-        });
+        }
+    );
 
 }
 
@@ -213,6 +213,25 @@ function atualizar(req, res) {
     
 }
 
+function atributosPersonagem(req, res) {
+    var personagem = req.body.personagem;
+
+    usuarioModel.atributosPersonagem(personagem).then(
+        function (resultado) {
+            res.json(resultado);
+        }
+    ).catch(
+        function (erro) {
+            console.log(erro);
+            console.log(
+                "\nHouve um erro ao realizar a atualização! Erro: ",
+                erro.sqlMessage
+            );
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
+
 module.exports = {
     autenticar,
     cadastrar,
@@ -222,4 +241,5 @@ module.exports = {
     PegarTopUsuario,
     PegarPontosDoUsuario,
     atualizar,
+    atributosPersonagem,
 };

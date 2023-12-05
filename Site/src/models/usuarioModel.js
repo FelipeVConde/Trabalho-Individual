@@ -76,10 +76,21 @@ function PegarPontosDoUsuario(nome) {
 }
 
 function atualizar(pontos, nome) {
-    instrucaoSql = `UPDATE usuario SET pontos = ${pontos} WHERE usuario.nome = '${nome}';`
+    var instrucao = `UPDATE usuario SET pontos = ${pontos} WHERE usuario.nome = '${nome}';`
 
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function atributosPersonagem(personagem) {
+    var instrucao = `
+    SELECT arma.tipo, especialidade.alimento, especialidade.raridade FROM personagem
+	JOIN arma ON fkArma = idArma
+    JOIN especialidade ON fkEspecialidade = idEspecialidade
+WHERE personagem.nome = '${personagem}';
+    `
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
 }
 
 module.exports = {
@@ -91,4 +102,5 @@ module.exports = {
     PegarTopUsuario,
     PegarPontosDoUsuario,
     atualizar,
+    atributosPersonagem,
 };
