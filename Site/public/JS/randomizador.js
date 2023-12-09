@@ -192,10 +192,7 @@ function VerificarAcerto(event) {
                 ponto -= 50
 
                 pontos_span.innerHTML = ponto
-                // div_pontuacao.innerHTML = `
-                //     usuario: <span id="b_usuario"></span><br><br>
-                //     Pontos: ${ponto}
-                // `
+                
                 fetch("/usuarios/atualizar", {
                     method: "PUT",
                     headers: {
